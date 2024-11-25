@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+    <header>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <input type="text" id="search" placeholder="搜尋餐廳或美食...">
+    </header>
+
+    <aside id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">✖</button>
+        <ul>
+            <li><a href="#favorites">我的最愛</a></li>
+            <li><a href="#reorder">再次訂購</a></li>
+            <li><a href="#hot">熱門推薦</a></li>
+            <li><a href="#faq">常見問題</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+            <li><a href="#news">最新消息</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <section class="categories">
+            <h2>食物分類</h2>
+            <div class="category-list">
+                <button class="category"><img src="hotpot.png" alt="火鍋">火鍋</button>
+                <button class="category"><img src="brunch.png" alt="早午餐">早午餐</button>
+                <button class="category"><img src="korean.png" alt="韓式">韓式</button>
+                <button class="category"><img src="japanese.png" alt="日式">日式</button>
+                <button class="category"><img src="pasta.png" alt="義大利麵">義大利麵</button>
+                <button class="category"><img src="fastfood.png" alt="速食">速食</button>
+                <button class="category"><img src="bento.png" alt="便當">便當</button>
+                <button class="category"><img src="chinese.png" alt="中式">中式</button>
+                <button class="category"><img src="thai.png" alt="泰式">泰式</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="Project.js"></script>
+</body>
+</html>
