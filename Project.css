@@ -169,19 +169,21 @@ header .menu-toggle {
 }
 
 /* 外層容器，讓內容居中並設置邊距 */
+
+
 .Menu-Container {
+
   display: grid;
   gap: 20px; /* 卡片間的間距 */
   justify-content: center; /* 水平居中 */
   margin: 0 auto; /* 讓容器居中 */
   padding: 20px; /* 外部邊距 */
   max-width: 1200px; /* 限制容器的最大寬度 */
+
+  grid-template-columns: 1fr;/* 預設每列顯示一個 */
 }
 
-/* 卡片佈局 */
-.Menu-Container {
-  grid-template-columns: 1fr; /* 預設每列顯示一個 */
-}
+
 
 /* 中等寬度：每列顯示兩家餐廳 */
 @media screen and (min-width: 600px) {
@@ -242,4 +244,6 @@ header .menu-toggle {
 .menu-item .restaurant-info p {
   margin: 5px 0 0;
   font-size: 14px;
+
 }
+

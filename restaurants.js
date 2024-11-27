@@ -1,7 +1,7 @@
 const restaurants = [
     { 
         name: "小石鍋", 
-        type: "火鍋", 
+        type: "Hotpot", //要和Project.html的data-type一致
         image: "pasta.jpg", 
         url: "#", 
         orderUrl: "https://order-pasta.com",  // 點餐網址
@@ -11,7 +11,7 @@ const restaurants = [
     },
     { 
         name: "12MINI快煮鍋", 
-        type: "火鍋", 
+        type: "Hotpot", 
         image: "burger.jpg", 
         url: "#", 
         orderUrl: "https://order-burger.com", 
@@ -21,7 +21,7 @@ const restaurants = [
     },
     { 
         name: "同伙小火鍋", 
-        type: "火鍋", 
+        type: "Hotpot", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -31,7 +31,7 @@ const restaurants = [
     },
     { 
         name: "石二鍋", 
-        type: "火鍋", 
+        type: "Hotpot", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -41,7 +41,7 @@ const restaurants = [
     },
     { 
         name: "8鍋新穎時尚臭臭鍋", 
-        type: "火鍋", 
+        type: "Hotpot", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -51,7 +51,7 @@ const restaurants = [
     },
     { 
         name: "五路鍋聖", 
-        type: "火鍋", 
+        type: "Hotpot", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -61,7 +61,7 @@ const restaurants = [
     },
     { 
         name: "想初。享廚 Share Kitchen", 
-        type: "早午餐", 
+        type: "Brunch", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -71,7 +71,7 @@ const restaurants = [
     },
     { 
         name: "蛋蛋早餐屋", 
-        type: "早午餐", 
+        type: "Brunch", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -81,7 +81,7 @@ const restaurants = [
     },
     { 
         name: "愛玉早餐店", 
-        type: "早午餐", 
+        type: "Brunch", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -91,7 +91,7 @@ const restaurants = [
     },
     { 
         name: "吉飽早餐", 
-        type: "早午餐", 
+        type: "Brunch", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -101,7 +101,7 @@ const restaurants = [
     },
     { 
         name: "晨間廚房", 
-        type: "早午餐", 
+        type: "Brunch", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -111,7 +111,7 @@ const restaurants = [
     },
     { 
         name: "有朝一日", 
-        type: "早午餐", 
+        type: "Brunch", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -121,7 +121,7 @@ const restaurants = [
     },
     { 
         name: "元珍食堂", 
-        type: "韓式", 
+        type: "Korean", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -131,7 +131,7 @@ const restaurants = [
     },
     { 
         name: "韓聚食", 
-        type: "韓式", 
+        type: "Korean", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
@@ -141,7 +141,7 @@ const restaurants = [
     },
     { 
         name: "饞饞燒肉", 
-        type: "韓式", 
+        type: "Korean", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
