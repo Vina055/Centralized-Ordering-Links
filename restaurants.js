@@ -1,33 +1,153 @@
 const restaurants = [
     { 
-        name: "Pasta", 
-        type: "Italian", 
+        name: "小石鍋", 
+        type: "火鍋", 
         image: "pasta.jpg", 
         url: "#", 
         orderUrl: "https://order-pasta.com",  // 點餐網址
-        phone: "+123456789",  // 連絡電話
-        address: "123 Pasta St.",  // 地址
-        tags: ["Spaghetti", "Carbonara"]  // 標籤
+        phone: "02 2908 3333",  // 連絡電話
+        address: "新北市新莊區建國一路5號",  // 地址
+        tags: ["火鍋"]  // 標籤
     },
     { 
-        name: "Burger", 
-        type: "Fast Food", 
+        name: "12MINI快煮鍋", 
+        type: "火鍋", 
         image: "burger.jpg", 
         url: "#", 
         orderUrl: "https://order-burger.com", 
-        phone: "+987654321", 
-        address: "456 Burger Ave.", 
-        tags: ["Cheeseburger", "Fries"]
+        phone: "02 2902 2612", 
+        address: "新北市新莊區建國一路2號", 
+        tags: ["火鍋"]
     },
     { 
-        name: "Sushi", 
-        type: "Japanese", 
+        name: "同伙小火鍋", 
+        type: "火鍋", 
         image: "sushi.jpg", 
         url: "#", 
         orderUrl: "https://order-sushi.com", 
-        phone: "+1122334455", 
-        address: "789 Sushi Rd.", 
-        tags: ["Salmon", "Nigiri"]
+        phone: "02 2901 7126", 
+        address: "新北市新莊區建國一路2-1號", 
+        tags: ["火鍋"]
+    },
+    { 
+        name: "石二鍋", 
+        type: "火鍋", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2908 4166", 
+        address: "新北市新莊區建國一路61號", 
+        tags: ["火鍋"]
+    },
+    { 
+        name: "8鍋新穎時尚臭臭鍋", 
+        type: "火鍋", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2903 4863", 
+        address: "新北市新莊區建國一路46號", 
+        tags: ["火鍋"]
+    },
+    { 
+        name: "五路鍋聖", 
+        type: "火鍋", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2903 0658", 
+        address: "新北市新莊區建國一路40號", 
+        tags: ["火鍋"]
+    },
+    { 
+        name: "想初。享廚 Share Kitchen", 
+        type: "早午餐", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2904 6666", 
+        address: "新北市新莊區中正路514巷91號", 
+        tags: ["早午餐"]
+    },
+    { 
+        name: "蛋蛋早餐屋", 
+        type: "早午餐", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 8981", 
+        address: "新北市新莊區中正路514巷83號", 
+        tags: ["早午餐"]
+    },
+    { 
+        name: "愛玉早餐店", 
+        type: "早午餐", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2908 5218", 
+        address: "新北市新莊區中正路514巷53弄34號", 
+        tags: ["早午餐"]
+    },
+    { 
+        name: "吉飽早餐", 
+        type: "早午餐", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 7040", 
+        address: "新北市新莊區中正路514巷37號", 
+        tags: ["早午餐"]
+    },
+    { 
+        name: "晨間廚房", 
+        type: "早午餐", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2907 6806", 
+        address: "新北市新莊區中正路514巷23號1樓", 
+        tags: ["早午餐"]
+    },
+    { 
+        name: "有朝一日", 
+        type: "早午餐", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 2286", 
+        address: "新北市新莊區中正路514巷53弄2號2樓", 
+        tags: ["早午餐"]
+    },
+    { 
+        name: "元珍食堂", 
+        type: "韓式", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2902 8579", 
+        address: "新北市新莊區中正路514巷31號", 
+        tags: ["韓式"]
+    },
+    { 
+        name: "韓聚食", 
+        type: "韓式", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "0979 546 684", 
+        address: "新北市新莊區中正路514巷21號", 
+        tags: ["韓式"]
+    },
+    { 
+        name: "饞饞燒肉", 
+        type: "韓式", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2908 4608", 
+        address: "新北市新莊區建國一路11號", 
+        tags: ["韓式"]
     },
     // 其他餐廳資料...
 ];
