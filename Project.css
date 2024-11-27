@@ -167,3 +167,76 @@ header .menu-toggle {
   color: #fff; /* 白色文字 */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加立體感的文字陰影 */
 }
+
+/* 外層容器，讓內容居中並設置邊距 */
+.menu-Container {
+  display: grid;
+  gap: 20px; /* 卡片間的間距 */
+  justify-content: center; /* 水平居中 */
+  margin: 0 auto; /* 讓容器居中 */
+  padding: 20px; /* 外部邊距 */
+  max-width: 1200px; /* 限制容器的最大寬度 */
+  grid-template-columns: 1fr;/* 預設每列顯示一個 */
+}
+
+
+/* 中等寬度：每列顯示兩家餐廳 */
+@media screen and (min-width: 600px) {
+  .Menu-Container {
+    grid-template-columns: repeat(2, 1fr); /* 兩列排列 */
+  }
+}
+
+/* 寬螢幕：每列顯示三家餐廳 */
+@media screen and (min-width: 900px) {
+  .Menu-Container {
+    grid-template-columns: repeat(3, 1fr); /* 三列排列 */
+  }
+}
+
+/* 餐廳卡片樣式 */
+.menu-item {
+  position: relative;
+  width: 100%; /* 卡片寬度依容器分配 */
+  height: 200px; /* 卡片固定高度 */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+/* 背景圖片 */
+.menu-item .restaurant-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+}
+
+/* 卡片內文字 */
+.menu-item .restaurant-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.menu-item .restaurant-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menu-item .restaurant-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}

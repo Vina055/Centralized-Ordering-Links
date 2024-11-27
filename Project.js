@@ -5,8 +5,14 @@ const favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 l
 
 // 頁面載入時渲染所有餐廳
 document.addEventListener('DOMContentLoaded', () => {
-  renderRestaurants("all");  // 渲染所有餐廳
+  document.querySelectorAll('.category-card').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const type = e.target.closest('.category-card').getAttribute('data-type');
+      renderRestaurants(type); // 渲染對應分類的餐廳
+    });
+  });
 });
+
 
 // 渲染餐廳
 function renderRestaurants(filter = "all") {
@@ -18,15 +24,27 @@ function renderRestaurants(filter = "all") {
     const item = document.createElement("div");
     item.className = "menu-item";
     item.innerHTML = `
-      <a href="restaurant-detail.html?name=${encodeURIComponent(restaurant.name)}">
-        <img src="${restaurant.image}" alt="${restaurant.name}">
-        <h3>${restaurant.name}</h3>
-      </a>
-      <button onclick="addToFavorites(${index})">加入我的最愛</button>
-      <button onclick="shareRestaurant('${restaurant.url}')">分享</button>
+      <div class="restaurant-card">
+        <!-- 圖片和跳轉功能 -->
+        <a href="restaurant-detail.html?name=${encodeURIComponent(restaurant.name)}" class="restaurant-image" 
+           style="background-image: url('${restaurant.image}');">
+        </a>
+
+        <!-- 餐廳資訊 -->
+        <div class="restaurant-info">
+          <h3>${restaurant.name}</h3>
+          <p>${restaurant.type}</p>
+        </div>
+
+        <!-- 按鈕功能 -->
+        <div class="restaurant-actions">
+          <button onclick="addToFavorites(${index})">加入我的最愛</button>
+        </div>
+      </div>
     `;
     container.appendChild(item);
   });
+
 }
 
 
@@ -60,7 +78,7 @@ document.getElementById('search').addEventListener('input', (event) => {
 });
 
 // 點選分類篩選餐廳
-document.querySelectorAll('.category').forEach(button => {
+document.querySelectorAll('.category-card').forEach(button => {
   button.addEventListener('click', (e) => {
     const type = e.target.getAttribute('data-type');
     renderRestaurants(type); // 渲染對應分類的餐廳
