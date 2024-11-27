@@ -1,13 +1,12 @@
-// 假設餐廳資料存在這裡
-const restaurants = [
-  { name: "Pasta", type: "Italian", image: "pasta.jpg", url: "#" },
-  { name: "Burger", type: "Fast Food", image: "burger.jpg", url: "#" },
-  { name: "Sushi", type: "Japanese", image: "sushi.jpg", url: "#" },
-  { name: "Bento Box", type: "Bento", image: "bento.jpg", url: "#" },
-  // Add other restaurants as needed
-];
+import { restaurants } from './restaurants.js';
 
-const favorites = [];
+const favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 localStorage 載入最愛餐廳
+
+
+// 頁面載入時渲染所有餐廳
+document.addEventListener('DOMContentLoaded', () => {
+  renderRestaurants("all");  // 渲染所有餐廳
+});
 
 // 渲染餐廳
 function renderRestaurants(filter = "all") {
@@ -19,20 +18,24 @@ function renderRestaurants(filter = "all") {
     const item = document.createElement("div");
     item.className = "menu-item";
     item.innerHTML = `
-      <img src="${restaurant.image}" alt="${restaurant.name}">
-      <h3>${restaurant.name}</h3>
-      <button onclick="addToFavorites(${index})">Add to Favorites</button>
-      <button onclick="shareRestaurant('${restaurant.url}')">Share</button>
+      <a href="restaurant-detail.html?name=${encodeURIComponent(restaurant.name)}">
+        <img src="${restaurant.image}" alt="${restaurant.name}">
+        <h3>${restaurant.name}</h3>
+      </a>
+      <button onclick="addToFavorites(${index})">加入我的最愛</button>
+      <button onclick="shareRestaurant('${restaurant.url}')">分享</button>
     `;
     container.appendChild(item);
   });
 }
+
 
 // 將餐廳加入我的最愛
 function addToFavorites(index) {
   const favoriteList = document.getElementById("favorites");
   if (!favorites.includes(restaurants[index])) {
     favorites.push(restaurants[index]);
+    localStorage.setItem('favorites', JSON.stringify(favorites)); // 儲存最愛餐廳到 localStorage
     const li = document.createElement("li");
     li.textContent = restaurants[index].name;
     favoriteList.appendChild(li);
@@ -42,7 +45,7 @@ function addToFavorites(index) {
 // 分享餐廳連結
 function shareRestaurant(url) {
   navigator.clipboard.writeText(url).then(() => {
-    alert("Restaurant URL copied to clipboard!");
+    alert("餐廳連結已複製!");
   });
 }
 
