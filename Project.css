@@ -87,12 +87,6 @@ header .menu-toggle {
   margin-bottom: 10px;
 }
 
-.category-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 15px;
-}
-
 .category {
   display: flex;
   flex-direction: column;
@@ -105,23 +99,71 @@ header .menu-toggle {
   transition: transform 0.2s;
 }
 
-.category:hover {
+.category {
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  height: 150px; /* 設定背景區域的高度 */
+  justify-content: flex-end; /* 讓文字出現在背景的下方 */
+  color: #333;
+  font-weight: bold;
+}
+
+.category p {
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* 白色半透明背景提升可讀性 */
+  border-radius: 5px;
+}
+
+.category-image {
+  width: 100%;
+  height: 70%; /* 設定圖片高度佔整體的70% */
+  background-size: cover; /* 背景圖片自動縮放填滿 */
+  background-position: center; /* 背景圖片置中 */
+  filter: brightness(0.8); /* 降低圖片亮度 */
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 保證格子在不同螢幕上自適應 */
+  gap: 15px;
+}
+
+.category-card {
+  position: relative;
+  width: 100%;
+  height: 180px; /* 設定卡片高度 */
+  border-radius: 10px;
+  overflow: hidden; /* 確保圖片不會超出邊界 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.category-card:hover {
   transform: scale(1.05);
 }
 
-.category img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 5px;
+.category-card .category-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* 確保圖片填滿背景，並保持比例 */
+  background-position: center;
+  filter: brightness(0.7); /* 調整圖片亮度，讓文字更清晰 */
 }
 
-@media (max-width: 768px) {
-  header input {
-      max-width: 200px;
-  }
-
-  .category img {
-      width: 30px;
-      height: 30px;
-  }
+.category-card p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 讓文字居中 */
+  margin: 0;
+  font-size: 18px; /* 調整文字大小 */
+  font-weight: bold;
+  color: #fff; /* 白色文字 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加立體感的文字陰影 */
 }
