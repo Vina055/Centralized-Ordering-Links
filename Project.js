@@ -2,7 +2,8 @@ import { restaurants } from './restaurants.js';
 
 const favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 localStorage 載入最愛餐廳
 
-
+// Initialize
+renderRestaurants();
 // 頁面載入時渲染所有餐廳
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.category-card').forEach(button => {
