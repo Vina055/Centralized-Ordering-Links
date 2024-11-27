@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Initialize
+renderRestaurants();
+
 // 渲染餐廳
 function renderRestaurants(filter = "all") {
   const container = document.getElementById("menu-container");
@@ -25,25 +28,22 @@ function renderRestaurants(filter = "all") {
     item.innerHTML = `
       <div class="restaurant-card">
         <!-- 圖片和跳轉功能 -->
-        <!-- 保留跳轉功能，並且使用 div 顯示圖片 -->
-        <a href="restaurant-detail.html?name=${encodeURIComponent(restaurant.name)}" class="restaurant-image-link">
-          <div class="restaurant-image" style="background-image: url('${restaurant.image}');"></div>
+        <a href="restaurant-detail.html?name=${encodeURIComponent(restaurant.name)}" class="restaurant-image" 
+           style="background-image: url('${restaurant.image}');">
         </a>
+
+        <!-- 餐廳資訊 -->
         <div class="restaurant-info">
           <h3>${restaurant.name}</h3>
           <p>${restaurant.type}</p>
         </div>
 
-
         <!-- 按鈕功能 -->
         <div class="restaurant-actions">
           <button onclick="addToFavorites(${index})">加入我的最愛</button>
         </div>
-
-
       </div>
     `;
-    
     container.appendChild(item);
   });
 
@@ -65,14 +65,7 @@ function shareRestaurant(url) {
   });
 }
 
-document.getElementById("filter").addEventListener("change", (e) => {
-  renderRestaurants(e.target.value);
-});
 
-document.getElementById("toggle-theme").addEventListener("click", toggleTheme);
-
-// Initialize
-renderRestaurants();
 // 搜尋功能
 document.getElementById('search').addEventListener('input', (event) => {
   const query = event.target.value.toLowerCase();
@@ -92,10 +85,14 @@ document.querySelectorAll('.category-card').forEach(button => {
   });
 });
 
-// 初始化渲染所有餐廳
-renderRestaurants("all");
+
 // 控制側邊欄開關
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   sidebar.classList.toggle('active');
+}
+
+//導向我的最愛
+function go2Favorite() {
+  window.location.href="myFavorite.html";
 }
