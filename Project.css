@@ -125,20 +125,30 @@ header .menu-toggle {
 }
 
 .category-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* 卡片最小寬度設為80px */
-  gap: 10px; /* 卡片之間的間距 */
-  justify-content: center;
+  display: flex; /* 使用水平排列 */
+  gap: 10px; /* 每個Icon間的間距 */
+  overflow-x: scroll; /* 啟用水平滾動 */
+  padding: 10px 0; /* 增加上下間距 */
+  scroll-snap-type: x mandatory; /* 每個Icon停留在滑動範圍 */
+  
+  /* 隱藏滾軸外觀 */
+  scrollbar-width: none; /* 適用於 Firefox */
+}
+
+.category-list::-webkit-scrollbar {
+  display: none; /* 隱藏滾軸外觀 (適用於 Webkit) */
 }
 
 .category-card {
-  position: relative;
-  width: 80px; /* 固定寬度 */
-  height: 80px; /* 固定高度，讓它成為正方形 */
-  border-radius: 10px;
-  overflow: hidden; /* 確保內容不超出邊界 */
+  flex: 0 0 auto; /* 固定卡片寬度 */
+  width: 100px; /* Icon 寬度 */
+  height: 100px; /* Icon 高度 */
+  border-radius: 10px; /* 圓角效果 */
+  overflow: hidden; /* 隱藏超出部分 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  text-align: center;
+  position: relative; /* 讓文字可以絕對定位 */
   transition: transform 0.2s;
 }
 
@@ -147,28 +157,33 @@ header .menu-toggle {
 }
 
 .category-card .category-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.7); /* 調暗圖片以提升文字對比度 */
 }
 
 .category-card p {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: 0;
-  font-size: 12px; /* 縮小文字大小以適應小卡片 */
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  color: white;
+  font-size: 14px;
   font-weight: bold;
-  color: #fff; /* 白色文字 */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* 提升文字可讀性 */
+  text-align: center;
 }
 
+/* 當螢幕寬度小於600px時啟用滑動模式 */
+@media screen and (max-width: 600px) {
+  .category-list {
+    flex-wrap: nowrap; /* 確保水平排列 */
+    overflow-x: scroll; /* 開啟滑動模式 */
+  }
+}
 
 /* 外層容器，讓內容居中並設置邊距 */
 
