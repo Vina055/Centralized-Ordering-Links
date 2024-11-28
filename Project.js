@@ -1,6 +1,6 @@
 import { restaurants } from './restaurants.js';
 
-const favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 localStorage 載入最愛餐廳
+
 
 // Initialize
 renderRestaurants();
@@ -53,6 +53,8 @@ function renderRestaurants(filter = "all") {
 
 
 function addToFavorites(restaurantName) {
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 localStorage 載入最愛餐廳
+
   // get the row list in restaurant
   const restaurant = restaurants.find(r => r.name === restaurantName);
   
@@ -68,6 +70,7 @@ function addToFavorites(restaurantName) {
   }
 
   localStorage.setItem('favorites', JSON.stringify(favorites));
+  // console.log('now favorite is ' + )
 }
 
 function shareRestaurant(url) {
@@ -101,11 +104,6 @@ document.querySelectorAll('.category-card').forEach(button => {
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   sidebar.classList.toggle('active');
-}
-
-//導向我的最愛
-function go2Favorite() {
-  window.location.href="myFavorite.html";
 }
 
 // 事件代理邏輯

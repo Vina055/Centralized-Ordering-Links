@@ -130,7 +130,6 @@ header .menu-toggle {
   overflow-x: scroll; /* 啟用水平滾動 */
   padding: 10px 0; /* 增加上下間距 */
   scroll-snap-type: x mandatory; /* 每個Icon停留在滑動範圍 */
-  
   /* 隱藏滾軸外觀 */
   scrollbar-width: none; /* 適用於 Firefox */
 }
