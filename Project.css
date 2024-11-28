@@ -126,23 +126,24 @@ header .menu-toggle {
 
 .category-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 保證格子在不同螢幕上自適應 */
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* 卡片最小寬度設為80px */
+  gap: 10px; /* 卡片之間的間距 */
+  justify-content: center;
 }
 
 .category-card {
   position: relative;
-  width: 100%;
-  height: 180px; /* 設定卡片高度 */
+  width: 80px; /* 固定寬度 */
+  height: 80px; /* 固定高度，讓它成為正方形 */
   border-radius: 10px;
-  overflow: hidden; /* 確保圖片不會超出邊界 */
+  overflow: hidden; /* 確保內容不超出邊界 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s;
 }
 
 .category-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1); /* 滑鼠移上時放大些許 */
 }
 
 .category-card .category-image {
@@ -151,22 +152,23 @@ header .menu-toggle {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover; /* 確保圖片填滿背景，並保持比例 */
+  background-size: cover;
   background-position: center;
-  filter: brightness(0.7); /* 調整圖片亮度，讓文字更清晰 */
+  filter: brightness(0.7); /* 調暗圖片以提升文字對比度 */
 }
 
 .category-card p {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* 讓文字居中 */
+  transform: translate(-50%, -50%);
   margin: 0;
-  font-size: 18px; /* 調整文字大小 */
+  font-size: 12px; /* 縮小文字大小以適應小卡片 */
   font-weight: bold;
   color: #fff; /* 白色文字 */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加立體感的文字陰影 */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* 提升文字可讀性 */
 }
+
 
 /* 外層容器，讓內容居中並設置邊距 */
 
@@ -247,4 +249,3 @@ header .menu-toggle {
   font-size: 14px;
 
 }
-
