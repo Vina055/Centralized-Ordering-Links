@@ -125,53 +125,70 @@ header .menu-toggle {
 }
 
 .category-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 保證格子在不同螢幕上自適應 */
-  gap: 15px;
+  display: flex; /* 使用水平排列 */
+  gap: 10px; /* 每個Icon間的間距 */
+  overflow-x: scroll; /* 啟用水平滾動 */
+  padding: 10px 0; /* 增加上下間距 */
+  scroll-snap-type: x mandatory; /* 每個Icon停留在滑動範圍 */
+  
+  /* 隱藏滾軸外觀 */
+  scrollbar-width: none; /* 適用於 Firefox */
+}
+
+.category-list::-webkit-scrollbar {
+  display: none; /* 隱藏滾軸外觀 (適用於 Webkit) */
 }
 
 .category-card {
-  position: relative;
-  width: 100%;
-  height: 180px; /* 設定卡片高度 */
-  border-radius: 10px;
-  overflow: hidden; /* 確保圖片不會超出邊界 */
+  flex: 0 0 auto; /* 固定卡片寬度 */
+  width: 100px; /* Icon 寬度 */
+  height: 100px; /* Icon 高度 */
+  border-radius: 10px; /* 圓角效果 */
+  overflow: hidden; /* 隱藏超出部分 */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  text-align: center;
+  position: relative; /* 讓文字可以絕對定位 */
   transition: transform 0.2s;
 }
 
 .category-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1); /* 滑鼠移上時放大些許 */
 }
 
 .category-card .category-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover; /* 確保圖片填滿背景，並保持比例 */
+  background-size: cover;
   background-position: center;
-  filter: brightness(0.7); /* 調整圖片亮度，讓文字更清晰 */
 }
 
 .category-card p {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 讓文字居中 */
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: 0;
-  font-size: 18px; /* 調整文字大小 */
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  color: white;
+  font-size: 14px;
   font-weight: bold;
-  color: #fff; /* 白色文字 */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加立體感的文字陰影 */
+  text-align: center;
+}
+
+/* 當螢幕寬度小於600px時啟用滑動模式 */
+@media screen and (max-width: 600px) {
+  .category-list {
+    flex-wrap: nowrap; /* 確保水平排列 */
+    overflow-x: scroll; /* 開啟滑動模式 */
+  }
 }
 
 /* 外層容器，讓內容居中並設置邊距 */
 
 
-#menu-container, #favorite-container {
+.Menu-Container {
 
   display: grid;
   gap: 20px; /* 卡片間的間距 */
@@ -187,21 +204,21 @@ header .menu-toggle {
 
 /* 中等寬度：每列顯示兩家餐廳 */
 @media screen and (min-width: 600px) {
-  #menu-container, #favorite-container {
+  .Menu-Container {
     grid-template-columns: repeat(2, 1fr); /* 兩列排列 */
   }
 }
 
 /* 寬螢幕：每列顯示三家餐廳 */
 @media screen and (min-width: 900px) {
-  #menu-container, #favorite-container {
+  .Menu-Container {
     grid-template-columns: repeat(3, 1fr); /* 三列排列 */
   }
 }
 
 
 /* 餐廳卡片樣式 */
-.menu-item, .favorite-item {
+.menu-item {
   position: relative;
   width: 100%; /* 卡片寬度依容器分配 */
   height: 200px; /* 卡片固定高度 */
@@ -211,12 +228,12 @@ header .menu-toggle {
   transition: transform 0.3s ease;
 }
 
-.menu-item:hover, .favorite-item:hover {
+.menu-item:hover {
   transform: scale(1.05);
 }
 
 /* 背景圖片 */
-.menu-item .restaurant-image, .favorite-item .restaurant-image {
+.menu-item .restaurant-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -225,11 +242,10 @@ header .menu-toggle {
   background-size: cover;
   background-position: center;
   filter: brightness(0.7);
-  z-index: 0; /* 設定為最底層 */
 }
 
 /* 卡片內文字 */
-.menu-item .restaurant-info, .favorite-item .restaurant-info {
+.menu-item .restaurant-info {
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -237,20 +253,14 @@ header .menu-toggle {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.menu-item .restaurant-info h3, .favorite-item .restaurant-info h3 {
+.menu-item .restaurant-info h3 {
   margin: 0;
   font-size: 18px;
   font-weight: bold;
 }
 
-.menu-item .restaurant-info p, .favorite-item .restaurant-info p {
+.menu-item .restaurant-info p {
   margin: 5px 0 0;
   font-size: 14px;
-}
 
-.menu-item .restaurant-actions, .favorite-item .restaurant-actions{
-  position: absolute;
-  bottom: 20px; /* 調整按鈕的位置 */
-  right: 20px; /* 距離右側的距離 */
-  z-index: 2; /* 確保按鈕層級高於背景 */
 }
