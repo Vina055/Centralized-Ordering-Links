@@ -369,6 +369,216 @@ const restaurants = [
         address: "新北市新莊區中正路514巷7號", 
         tags: ["中式"]
     },
+    { 
+        name: "名廚鐵板燒", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2904 3513", 
+        address: "新北市新莊區建國一路3號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "滷都香加熱滷味", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "無", 
+        address: "新北市新莊區建國一路1號之1", 
+        tags: ["中式"]
+    },
+    { 
+        name: "家羿鵝肉、玉里麵專賣店", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 3333", 
+        address: "新北市新莊區建國一路6號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "阿山哥麵飯", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2903 9139", 
+        address: "新北市新莊區建國一路23號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "典廚牛肉麵", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2902 2305", 
+        address: "新北市新莊區建國一路21號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "老葉牛肉麵創始店", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2908 7278", 
+        address: "新北市新莊區建國一路14號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "勁牛肉麵館", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2904 2271", 
+        address: "新北市新莊區建國一路36號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "老吳牛肉", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2902 6657", 
+        address: "新北市新莊區建國一路27號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "牛脾氣牛排館", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 6828", 
+        address: "新北市新莊區建國一路22號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "泰巢麵食館", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2908 2341", 
+        address: "新北市新莊區建國一路29號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "川湘閣重慶酸菜魚", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "0932 762 600", 
+        address: "新北市新莊區建國一路32號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "官小二酸菜魚", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 6131", 
+        address: "新北市新莊區中正路516-41號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "英倫小廚", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "0909 224 055", 
+        address: "新北市新莊區建國一路39號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "港口廣東粥", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "0958 667 580", 
+        address: "新北市新莊區建國一路78號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "粥大福", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2908 4567", 
+        address: "新北市新莊區中正路516之37號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "好味手工麵疙瘩", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 3583", 
+        address: "新北市新莊區建國一路82號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "重慶酸辣粉", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2908 6567", 
+        address: "新北市新莊區建國一路35號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "三碗麵 傻瓜麵", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2903 7088", 
+        address: "新北市新莊區建國一路80號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "江子翠鵝肉油雞專賣店", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 2586", 
+        address: "新北市新莊區建國一路No. 84號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "玖零年代 燒臘便當專賣店", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 3141", 
+        address: "新北市新莊區中正路514巷81號", 
+        tags: ["中式"]
+    },
+    { 
+        name: "麻入口", 
+        type: "Chinese", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://order-sushi.com", 
+        phone: "02 2901 3233", 
+        address: "新北市新莊區中正路516之37號2樓", 
+        tags: ["中式"]
+    },
     // 其他餐廳資料...
 ];
 
