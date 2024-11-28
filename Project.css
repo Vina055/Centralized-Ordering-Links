@@ -188,7 +188,7 @@ header .menu-toggle {
 /* 外層容器，讓內容居中並設置邊距 */
 
 
-.Menu-Container {
+#menu-container, #favorite-container {
 
   display: grid;
   gap: 20px; /* 卡片間的間距 */
@@ -204,21 +204,21 @@ header .menu-toggle {
 
 /* 中等寬度：每列顯示兩家餐廳 */
 @media screen and (min-width: 600px) {
-  .Menu-Container {
+  #menu-container, #favorite-container {
     grid-template-columns: repeat(2, 1fr); /* 兩列排列 */
   }
 }
 
 /* 寬螢幕：每列顯示三家餐廳 */
 @media screen and (min-width: 900px) {
-  .Menu-Container {
+  #menu-container, #favorite-container {
     grid-template-columns: repeat(3, 1fr); /* 三列排列 */
   }
 }
 
 
 /* 餐廳卡片樣式 */
-.menu-item {
+.menu-item, .favorite-item {
   position: relative;
   width: 100%; /* 卡片寬度依容器分配 */
   height: 200px; /* 卡片固定高度 */
@@ -228,12 +228,12 @@ header .menu-toggle {
   transition: transform 0.3s ease;
 }
 
-.menu-item:hover {
+.menu-item:hover, .favorite-item:hover {
   transform: scale(1.05);
 }
 
 /* 背景圖片 */
-.menu-item .restaurant-image {
+.menu-item .restaurant-image, .favorite-item .restaurant-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -242,25 +242,33 @@ header .menu-toggle {
   background-size: cover;
   background-position: center;
   filter: brightness(0.7);
+  z-index: 0; /* 背景層級最低 */
 }
 
 /* 卡片內文字 */
-.menu-item .restaurant-info {
+.menu-item .restaurant-info, .restaurant-image .restaurant-info {
   position: absolute;
   bottom: 10px;
   left: 10px;
   color: #fff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 1; /* 層級高於背景 */
 }
 
-.menu-item .restaurant-info h3 {
+.menu-item .restaurant-info h3,  .favorite-item .restaurant-info h3{
   margin: 0;
   font-size: 18px;
   font-weight: bold;
 }
 
-.menu-item .restaurant-info p {
+.menu-item .restaurant-info p, .favorite-item .restaurant-info p {
   margin: 5px 0 0;
   font-size: 14px;
+}
 
+.menu-item .restaurant-actions, .favorite-item .restaurant-actions {
+  position: absolute;
+  bottom: 20px; /* 調整位置 */
+  right: 20px;
+  z-index: 2; /* 確保按鈕層級高於所有其他元素 */
 }
