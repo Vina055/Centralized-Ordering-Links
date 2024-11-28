@@ -3,11 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Delivery</title>
-    <link rel="stylesheet" href="Project.css">
+    <title>餐廳詳情</title>
+    <link rel="stylesheet" href="Project.css"> <!-- 這邊可以加入你的樣式檔案 -->
 </head>
 <body>
-    <h2>我的最愛</h2>
-    <section class="my-favorite"></section>
+    <header>
+        <h1>餐廳詳情</h1>
+        <button onclick="window.history.back()">返回</button>
+    </header>
+    <main>
+        <h2>我的最愛</h2>
+        <button id="clear-favorites-button">clear favorites</button>
+        <!-- <button id="show-favorites-button">show favorites</button> -->
+        <section id="favorite-container"></section>
+    </main>
+    <script type="module" src="myFavorite.js" defer></script>
 </body>
 </html>

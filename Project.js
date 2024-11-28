@@ -4,6 +4,7 @@ const favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 l
 
 // Initialize
 renderRestaurants();
+
 // 頁面載入時渲染所有餐廳
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.category-card').forEach(button => {
@@ -41,7 +42,7 @@ function renderRestaurants(filter = "all") {
 
         <!-- 按鈕功能 -->
         <div class="restaurant-actions">
-          <button onclick="addToFavorites(${index})">加入我的最愛</button>
+          <button class="action-button">加入我的最愛</button>
         </div>
       </div>
     `;
@@ -50,14 +51,23 @@ function renderRestaurants(filter = "all") {
 
 }
 
-function addToFavorites(index) {
-  const favoriteList = document.getElementById("favorites");
-  if (!favorites.includes(restaurants[index])) {
-      favorites.push(restaurants[index]);
-      const li = document.createElement("li");
-      li.textContent = restaurants[index].name;
-      favoriteList.appendChild(li);
+
+function addToFavorites(restaurantName) {
+  // get the row list in restaurant
+  const restaurant = restaurants.find(r => r.name === restaurantName);
+  
+  // check if the restaurant is in the favorite
+  const restaurantIndex = favorites.findIndex(fav => fav.name === restaurantName);
+
+  // If restaurant is not in favorites, add it
+  if (restaurantIndex === -1) {
+    favorites.push(restaurant);
   }
+  else {
+    favorites.splice(restaurant, 1);
+  }
+
+  localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
 function shareRestaurant(url) {
@@ -97,3 +107,19 @@ function toggleSidebar() {
 function go2Favorite() {
   window.location.href="myFavorite.html";
 }
+
+// 事件代理邏輯
+document.getElementById('menu-container').addEventListener('click', (event) => {
+  // 確保點擊的目標是按鈕
+  if (event.target.classList.contains('action-button')) {
+      // 找到按鈕所屬的 .restaurant-card
+      const restaurantCard = event.target.closest('.restaurant-card');
+
+      // 從該卡片內部獲取 <h3> 的文字
+      const restaurantName = restaurantCard.querySelector('h3').textContent;
+
+      // 呼叫處理函式，並傳入餐廳名稱
+      console.log(`You clicked to add: ${restaurantName}`);
+      addToFavorites(restaurantName);
+  }
+});
