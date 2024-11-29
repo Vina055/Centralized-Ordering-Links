@@ -1,7 +1,5 @@
 import { restaurants } from './restaurants.js';
 
-
-
 // Initialize
 renderRestaurants();
 
@@ -99,13 +97,6 @@ document.querySelectorAll('.category-card').forEach(button => {
   });
 });
 
-
-// 控制側邊欄開關
-function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  sidebar.classList.toggle('active');
-}
-
 // 事件代理邏輯
 document.getElementById('menu-container').addEventListener('click', (event) => {
   // 確保點擊的目標是按鈕
@@ -120,4 +111,16 @@ document.getElementById('menu-container').addEventListener('click', (event) => {
       console.log(`You clicked to add: ${restaurantName}`);
       addToFavorites(restaurantName);
   }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const favoriteLink = document.getElementById("favorite-link");
+
+  favoriteLink.addEventListener("click", function (event) {
+      event.preventDefault(); // 防止立即跳轉
+      favoriteLink.classList.toggle("active"); // 切換放大效果
+      setTimeout(() => {
+          window.location.href = favoriteLink.href; // 動畫結束後跳轉
+      }, 300); // 延遲300毫秒完成動畫
+  });
 });
