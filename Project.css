@@ -24,6 +24,15 @@ body {
   transform: scale(1.2); /* 放大 */
 }
 
+#search {
+  width: 300px; /* 調整為你想要的寬度，例如 300px */
+  max-width: 90%; /* 確保在較小屏幕上適應 */
+  padding: 5px; /* 調整內部填充 */
+  border-radius: 5px; /* 美化效果 */
+  border: 1px solid #ccc; /* 邊框樣式 */
+  box-sizing: border-box; /* 確保 padding 不影響總寬度 */
+}
+
 
 header {
   display: flex;
