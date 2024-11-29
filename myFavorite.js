@@ -33,7 +33,7 @@ function showFavorites() {
 
             <!-- 按鈕功能 -->
             <div class="restaurant-actions">
-                <button class="action-button remove-favorite">移除我的最愛</button>
+                <button class="action-button remove-favorite">🤍</button>
             </div>
         </div>
         `; 

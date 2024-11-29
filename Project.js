@@ -45,7 +45,7 @@ function renderRestaurants(filter = "all") {
         <!-- 按鈕功能 -->
         <div class="restaurant-actions">
           <button class="action-button" data-name="${restaurant.name}">
-            ${isFavorite ? '從最愛移除' : '加入我的最愛'}
+            ${isFavorite ? '❤️' : '🤍'}
           </button>
         </div>
       </div>
