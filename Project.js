@@ -13,18 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Initialize
-renderRestaurants();
-
 // 渲染餐廳
 function renderRestaurants(filter = "all") {
   const container = document.getElementById("menu-container");
   container.innerHTML = ""; // 清空目前顯示的餐廳
   const filtered = filter === "all" ? restaurants : restaurants.filter(r => r.type === filter);
 
+  // 取得目前已儲存的最愛餐廳
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
   filtered.forEach((restaurant, index) => {
     const item = document.createElement("div");
     item.className = "menu-item";
+    
+    // 檢查餐廳是否已經在最愛
+    const isFavorite = favorites.some(fav => fav.name === restaurant.name);
+    
     item.innerHTML = `
       <div class="restaurant-card">
         <!-- 圖片和跳轉功能 -->
@@ -40,43 +44,50 @@ function renderRestaurants(filter = "all") {
 
         <!-- 按鈕功能 -->
         <div class="restaurant-actions">
-          <button class="action-button">加入我的最愛</button>
+          <button class="action-button" data-name="${restaurant.name}">
+            ${isFavorite ? '從最愛移除' : '加入我的最愛'}
+          </button>
         </div>
       </div>
     `;
     container.appendChild(item);
   });
-
 }
 
+// 加入或移除最愛
+function toggleFavorite(restaurantName) {
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 localStorage 載入最愛餐廳
 
-function addToFavorites(restaurantName) {
-  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 localStorage 載入最愛餐廳
-
-  // get the row list in restaurant
+  // 查找餐廳
   const restaurant = restaurants.find(r => r.name === restaurantName);
-  
-  // check if the restaurant is in the favorite
+  if (!restaurant) return;
+
+  // 檢查餐廳是否已經在最愛中
   const restaurantIndex = favorites.findIndex(fav => fav.name === restaurantName);
 
-  // If restaurant is not in favorites, add it
   if (restaurantIndex === -1) {
+    // 如果餐廳不在最愛中，加入最愛
     favorites.push(restaurant);
-  }
-  else {
-    favorites.splice(restaurant, 1);
+  } else {
+    // 如果餐廳已在最愛中，移除最愛
+    favorites.splice(restaurantIndex, 1);
   }
 
+  // 儲存更新後的最愛餐廳
   localStorage.setItem('favorites', JSON.stringify(favorites));
-  // console.log('now favorite is ' + )
+
+  // 重新渲染餐廳列表
+  renderRestaurants();
 }
 
-function shareRestaurant(url) {
-  navigator.clipboard.writeText(url).then(() => {
-      alert("Restaurant URL copied to clipboard!");
-  });
-}
-
+// 事件代理邏輯，處理加入/移除最愛
+document.getElementById('menu-container').addEventListener('click', (event) => {
+  // 確保點擊的目標是按鈕
+  if (event.target.classList.contains('action-button')) {
+    const restaurantName = event.target.getAttribute('data-name');
+    toggleFavorite(restaurantName);
+  }
+});
 
 // 搜尋功能
 document.getElementById('search').addEventListener('input', (event) => {
@@ -88,39 +99,10 @@ document.getElementById('search').addEventListener('input', (event) => {
   });
 });
 
-
 // 點選分類篩選餐廳
 document.querySelectorAll('.category-card').forEach(button => {
   button.addEventListener('click', (e) => {
     const type = e.target.getAttribute('data-type');
     renderRestaurants(type); // 渲染對應分類的餐廳 
-  });
-});
-
-// 事件代理邏輯
-document.getElementById('menu-container').addEventListener('click', (event) => {
-  // 確保點擊的目標是按鈕
-  if (event.target.classList.contains('action-button')) {
-      // 找到按鈕所屬的 .restaurant-card
-      const restaurantCard = event.target.closest('.restaurant-card');
-
-      // 從該卡片內部獲取 <h3> 的文字
-      const restaurantName = restaurantCard.querySelector('h3').textContent;
-
-      // 呼叫處理函式，並傳入餐廳名稱
-      console.log(`You clicked to add: ${restaurantName}`);
-      addToFavorites(restaurantName);
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const favoriteLink = document.getElementById("favorite-link");
-
-  favoriteLink.addEventListener("click", function (event) {
-      event.preventDefault(); // 防止立即跳轉
-      favoriteLink.classList.toggle("active"); // 切換放大效果
-      setTimeout(() => {
-          window.location.href = favoriteLink.href; // 動畫結束後跳轉
-      }, 300); // 延遲300毫秒完成動畫
   });
 });

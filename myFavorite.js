@@ -5,17 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     showFavorites(); 
 });
 
-// document.getElementById('show-favorites-button').addEventListener('click', showFavorites);
+// 清除最愛餐廳的事件
 document.getElementById('clear-favorites-button').addEventListener('click', clearFavorites);
 
-// Show favorite list
-function showFavorites()
-{
+// 顯示最愛餐廳
+function showFavorites() {
     const favoritesContainer = document.getElementById('favorite-container');
     favoritesContainer.innerHTML = ""; // 清空舊內容
     console.log("函式已執行");
 
-    // Show favorite restaurants in the list
+    // 顯示最愛餐廳
     favorites.forEach(restaurant => { 
         const item = document.createElement("div");
         item.className = "favorite-item"; 
@@ -28,21 +27,29 @@ function showFavorites()
 
             <!-- 餐廳資訊 -->
             <div class="restaurant-info">
-            <h3>${restaurant.name}</h3>
-            <p>${restaurant.type}</p>
+                <h3>${restaurant.name}</h3>
+                <p>${restaurant.type}</p>
             </div>
 
             <!-- 按鈕功能 -->
             <div class="restaurant-actions">
-            <button class="action-button">加入我的最愛</button>
+                <button class="action-button remove-favorite">移除我的最愛</button>
             </div>
         </div>
         `; 
         favoritesContainer.appendChild(item); 
     });
+
+    // 為所有移除最愛的按鈕綁定事件
+    document.querySelectorAll('.remove-favorite').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const restaurantName = event.target.closest('.restaurant-card').querySelector('h3').textContent;
+            removeFromFavorites(restaurantName); // 呼叫移除最愛的函數
+        });
+    });
 }
 
-// Clear all favorites
+// 清除所有最愛餐廳
 function clearFavorites() {
     favorites.length = 0; // 清空陣列
     localStorage.removeItem('favorites'); // 清空 localStorage
@@ -52,4 +59,12 @@ function clearFavorites() {
     document.getElementById('favorite-container').innerHTML = ""; 
 }
 
-
+// 移除最愛餐廳
+function removeFromFavorites(restaurantName) {
+    const index = favorites.findIndex(r => r.name === restaurantName);
+    if (index !== -1) {
+        favorites.splice(index, 1); // 移除餐廳
+        localStorage.setItem('favorites', JSON.stringify(favorites)); // 更新 localStorage
+        showFavorites(); // 重新顯示最愛餐廳
+    }
+}
