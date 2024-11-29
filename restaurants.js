@@ -5,7 +5,7 @@ const restaurants = [
         image: "burger.jpg", //餐廳圖片
 
         url: "https://maps.app.goo.gl/bDAFxE1tV438ByEF8", 
-        orderUrl: "https://order-pasta.com",  // 點餐網址
+        orderUrl: "#",  // 點餐網址
         phone: "02 2908 3333",  // 連絡電話
         address: "新北市新莊區建國一路5號",  // 地址
         tags: ["火鍋"]  // 標籤
@@ -15,7 +15,7 @@ const restaurants = [
         type: "Hotpot", 
         image: "burger.jpg", 
         url: "https://maps.app.goo.gl/DWFMjoXTKc4VNKp27", 
-        orderUrl: "https://order-burger.com", 
+        orderUrl: "#", 
         phone: "02 2902 2612", 
         address: "新北市新莊區建國一路2號", 
         tags: ["火鍋"]
@@ -25,7 +25,7 @@ const restaurants = [
         type: "Hotpot", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/wAA6xjcme1SkzMpg8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 7126", 
         address: "新北市新莊區建國一路2-1號", 
         tags: ["火鍋"]
@@ -45,7 +45,7 @@ const restaurants = [
         type: "Hotpot", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/GoDEUgy9x3Vb7uva7", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2903 4863", 
         address: "新北市新莊區建國一路46號", 
         tags: ["火鍋"]
@@ -54,8 +54,8 @@ const restaurants = [
         name: "五路鍋聖", 
         type: "Hotpot", 
         image: "sushi.jpg", 
-        url: "#", 
-        orderUrl: "https://maps.app.goo.gl/5i9Uzkgp2dWrZWpB9", 
+        url: "https://maps.app.goo.gl/5i9Uzkgp2dWrZWpB9", 
+        orderUrl: "#", 
         phone: "02 2903 0658", 
         address: "新北市新莊區建國一路40號", 
         tags: ["火鍋"]
@@ -73,9 +73,9 @@ const restaurants = [
     { 
         name: "蛋蛋早餐屋", 
         type: "Brunch", 
-        image: "https://www.google.com/maps/place/%E8%9B%8B%E8%9B%8B%E6%97%A9%E9%A4%90%E5%B1%8B/@25.0341046,121.4314856,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPVvyP8Roi3xqAi9WEguGYA8rMar4JIXWXeDZor!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPVvyP8Roi3xqAi9WEguGYA8rMar4JIXWXeDZor%3Dw114-h86-k-no!7i4032!8i3024!4m7!3m6!1s0x3442a7e8587e9e47:0xd8197904dcf7282c!8m2!3d25.0340317!4d121.4314214!10e5!16s%2Fg%2F1tdz72wz?authuser=0&entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D#", 
+        image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/rUPgHghpW69YJcDR6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 8981", 
         address: "新北市新莊區中正路514巷83號", 
         tags: ["早午餐"]
@@ -95,7 +95,7 @@ const restaurants = [
         type: "Brunch", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/jqpuM7qWLK5RVzBK6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://fnb-qrcode.trendlab.ai/v15/home?braId=822670856168800256&codeId=823488362169102336", 
         phone: "02 2901 7040", 
         address: "新北市新莊區中正路514巷37號", 
         tags: ["早午餐"]
@@ -105,7 +105,7 @@ const restaurants = [
         type: "Brunch", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/JgHgWsdCGumGs8Q99", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://www.mk2000.com.tw/load_page/get_qa_page/4", 
         phone: "02 2907 6806", 
         address: "新北市新莊區中正路514巷23號1樓", 
         tags: ["早午餐"]
@@ -114,8 +114,8 @@ const restaurants = [
         name: "有朝一日", 
         type: "Brunch", 
         image: "sushi.jpg", 
-        url: "#", 
-        orderUrl: "https://order-sushi.com", 
+        url: "https://maps.app.goo.gl/CQAzbTVVMd6XfvRJ7", 
+        orderUrl: "#", 
         phone: "02 2901 2286", 
         address: "新北市新莊區中正路514巷53弄2號2樓", 
         tags: ["早午餐"]
@@ -155,7 +155,7 @@ const restaurants = [
         type: "Korean", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/jggU5jrf3USRREbm9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://line.me/R/ti/p/@584rlkmk?from=page&liff.referrer=https%3A%2F%2Fwww.google.com.tw%2F&accountId=584rlkmk", 
         phone: "02 2908 4608", 
         address: "新北市新莊區建國一路11號", 
         tags: ["韓式"]
@@ -165,7 +165,7 @@ const restaurants = [
         type: "Korean", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/Bj6M1Q4Rt3nauMhp6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2906 6915", 
         address: "新北市新莊區中正路514巷35號", 
         tags: ["韓式"]
@@ -175,7 +175,7 @@ const restaurants = [
         type: "Japanese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/sySDHiWEBa7bz53k7", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2902 8186", 
         address: "新北市新莊區中正路514巷71號", 
         tags: ["日式"]
@@ -185,7 +185,7 @@ const restaurants = [
         type: "Japanese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/S729KvBDG1w7q31H8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://shop.ichefpos.com/store/lS9orgcg/ordering", 
         phone: "02 2901 8267", 
         address: "新北市新莊區中正路514巷51號1樓", 
         tags: ["日式"]
@@ -195,7 +195,7 @@ const restaurants = [
         type: "Japanese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/v8kkpbzB44P5fM8k7", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2908 8505", 
         address: "新北市新莊區建國一路1號", 
         tags: ["日式"]
@@ -205,7 +205,7 @@ const restaurants = [
         type: "Japanese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/LCfsW5vrJHtAmnWf6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "無", 
         address: "新北市新莊區建國一路92號", 
         tags: ["日式"]
@@ -215,7 +215,7 @@ const restaurants = [
         type: "Western", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/6X2ZXExEs54aggss5", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2908 7212", 
         address: "新北市新莊區中正路514巷47號", 
         tags: ["西式"]
@@ -225,7 +225,7 @@ const restaurants = [
         type: "Western", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/WU6DC2mi5u2FLk8U8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2902 4516", 
         address: "新北市新莊區中正路514巷43號", 
         tags: ["西式"]
@@ -234,8 +234,8 @@ const restaurants = [
         name: "安東尼義式廚房", 
         type: "Western", 
         image: "sushi.jpg", 
-        url: "#https://maps.app.goo.gl/jj24o36b27LA2Mu5A", 
-        orderUrl: "https://order-sushi.com", 
+        url: "https://maps.app.goo.gl/jj24o36b27LA2Mu5A", 
+        orderUrl: "https://maps.app.goo.gl/CQAzbTVVMd6XfvRJ7", 
         phone: "02 2901 2660", 
         address: "新北市新莊區中正路514巷39號", 
         tags: ["西式"]
@@ -245,7 +245,7 @@ const restaurants = [
         type: "Western", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/7kB37MAKwx3uegZd6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 8582", 
         address: "新北市新莊區中正路514巷41號", 
         tags: ["西式"]
@@ -255,7 +255,7 @@ const restaurants = [
         type: "Western", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/tv32a8WeJeLatc2v8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://line.me/R/ti/p/@sro5367c", 
         phone: "02 2906 8820", 
         address: "新北市新莊區中正路593號", 
         tags: ["西式"]
@@ -265,7 +265,7 @@ const restaurants = [
         type: "Western", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/yh5FXJ9RSJAkK1x28", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2903 3636", 
         address: "新北市新莊區建國一路10號", 
         tags: ["西式"]
@@ -275,7 +275,7 @@ const restaurants = [
         type: "Fast Food", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/rnGDNW5baAjtUqJR9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://line.me/R/ti/p/@474kahma?ts=10272303&oat_content=url", 
         phone: "0970 797 574", 
         address: "新北市新莊區中正路514巷99號", 
         tags: ["速食"]
@@ -285,7 +285,7 @@ const restaurants = [
         type: "Bento", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/5R6gaYK5PVsgsMGM7", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://shop.ichefpos.com/store/FWtXw1dm/ordering", 
         phone: "02 2974 2728", 
         address: "新北市新莊區中正路514巷99-5號", 
         tags: ["便當"]
@@ -305,7 +305,7 @@ const restaurants = [
         type: "Bento", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/F6nAnK4zCLJhfuWh6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2902 6585", 
         address: "新北市新莊區建國一路42號", 
         tags: ["便當"]
@@ -315,7 +315,7 @@ const restaurants = [
         type: "Bento", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/qnAjLSahNtgyjpod9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://www.eathere.com.tw/MaceWebPhone/order.php?U3RvqscrgncmVJRD0wMjI5MDI2NzUyJlR5cGU9MiZUYWJsZU5hbWU9", 
         phone: "02 2902 6752", 
         address: "新北市新莊區建國一路24號", 
         tags: ["便當"]
@@ -325,7 +325,7 @@ const restaurants = [
         type: "Bento", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/yzxAK4MXgPAuNtyh8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 6010", 
         address: "新北市新莊區建國一路26號", 
         tags: ["便當"]
@@ -335,7 +335,7 @@ const restaurants = [
         type: "Bento", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/Kib91Bb5c1f51LKeA", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://shop.ichefpos.com/store/mWMTSTrC/ordering", 
         phone: "0912 539 861", 
         address: "新北市新莊區中正路516巷之16號1樓", 
         tags: ["便當"]
@@ -365,7 +365,7 @@ const restaurants = [
         type: "Thai", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/wf1HC8mQ1bqjfgRB6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2902 5898", 
         address: "新北市新莊區中正路514巷79號", 
         tags: ["泰式"]
@@ -375,7 +375,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/jaqkBHeutZdMFeMj7", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2902 1626", 
         address: "新北市新莊區中正路514巷53弄32號", 
         tags: ["中式"]
@@ -385,7 +385,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/wywpaGUc55pqoaZP8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2906 7250", 
         address: "新北市新莊區中正路514巷69號", 
         tags: ["中式"]
@@ -395,7 +395,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/SW8kRVBGirSxcvjBA", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2904 7868", 
         address: "新北市新莊區中正路514巷7號", 
         tags: ["中式"]
@@ -405,7 +405,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/GHoZFtEYuCjko72JA", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2904 3513", 
         address: "新北市新莊區建國一路3號", 
         tags: ["中式"]
@@ -415,7 +415,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/grAmdRKR5oQjWsAJ9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "無", 
         address: "新北市新莊區建國一路1號之1", 
         tags: ["中式"]
@@ -425,7 +425,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/cvigsRsLgAHB64f88", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 3333", 
         address: "新北市新莊區建國一路6號", 
         tags: ["中式"]
@@ -435,7 +435,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/4SVcF91CtqVuHkzz6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2903 9139", 
         address: "新北市新莊區建國一路23號", 
         tags: ["中式"]
@@ -445,7 +445,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/6X4mHT2Sp1ZujkRn9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2902 2305", 
         address: "新北市新莊區建國一路21號", 
         tags: ["中式"]
@@ -455,7 +455,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/7pgXCKLLYjJNFPTr5", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2908 7278", 
         address: "新北市新莊區建國一路14號", 
         tags: ["中式"]
@@ -465,7 +465,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/c2XnpHhRVKrr9vWV9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2904 2271", 
         address: "新北市新莊區建國一路36號", 
         tags: ["中式"]
@@ -475,7 +475,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/m5d4SKaWCiLQZiei6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2902 6657", 
         address: "新北市新莊區建國一路27號", 
         tags: ["中式"]
@@ -484,8 +484,8 @@ const restaurants = [
         name: "牛脾氣牛排館", 
         type: "Chinese", 
         image: "sushi.jpg", 
-        url: "#", 
-        orderUrl: "https://order-sushi.com", 
+        url: "https://maps.app.goo.gl/yWYLg4747ysBw4iG6", 
+        orderUrl: "#", 
         phone: "02 2901 6828", 
         address: "新北市新莊區建國一路22號", 
         tags: ["中式"]
@@ -495,7 +495,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/DzKPNskao1TbmSQV9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2908 2341", 
         address: "新北市新莊區建國一路29號", 
         tags: ["中式"]
@@ -505,7 +505,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/aUdG2tTRN4FeACJA8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "0932 762 600", 
         address: "新北市新莊區建國一路32號", 
         tags: ["中式"]
@@ -515,7 +515,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/gAzfHhUFX19kmCUs6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 6131", 
         address: "新北市新莊區中正路516-41號", 
         tags: ["中式"]
@@ -525,7 +525,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/vBqkS9qAbdd1rtNY9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://line.me/R/ti/p/%40xzq2349l", 
         phone: "0909 224 055", 
         address: "新北市新莊區建國一路39號", 
         tags: ["中式"]
@@ -535,7 +535,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/DBSZ9ocM2GwKEQAs8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://line.me/R/ti/p/%40xzq2349l", 
         phone: "0958 667 580", 
         address: "新北市新莊區建國一路78號", 
         tags: ["中式"]
@@ -545,7 +545,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/ftvV3Es8Vi5sQ2vH8", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://imenu.com.tw/JhouDaFu/JDF_FuDa/menu", 
         phone: "02 2908 4567", 
         address: "新北市新莊區中正路516之37號", 
         tags: ["中式"]
@@ -555,7 +555,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/cphLFixGeMqqGCfn9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 3583", 
         address: "新北市新莊區建國一路82號", 
         tags: ["中式"]
@@ -565,7 +565,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/a5UUpNFCzD1fNqJHA", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2908 6567", 
         address: "新北市新莊區建國一路35號", 
         tags: ["中式"]
@@ -575,7 +575,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/a5UUpNFCzD1fNqJHA", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2903 7088", 
         address: "新北市新莊區建國一路80號", 
         tags: ["中式"]
@@ -585,7 +585,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/ed9N1usuB7PqzoQr6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "", 
         phone: "02 2901 2586", 
         address: "新北市新莊區建國一路No. 84號", 
         tags: ["中式"]
@@ -595,7 +595,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/5qxa1KhoRaiexS9B6", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 3141", 
         address: "新北市新莊區中正路514巷81號", 
         tags: ["中式"]
@@ -605,7 +605,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/hztCbfinGGaUpATv5", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2901 3233", 
         address: "新北市新莊區中正路516之37號2樓", 
         tags: ["中式"]
