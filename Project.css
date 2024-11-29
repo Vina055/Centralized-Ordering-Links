@@ -10,6 +10,21 @@ body {
   background-color: #f5f5f5;
 }
 
+/* 基礎樣式 */
+.favorite-icon {
+  font-size: 24px; /* 調整愛心大小 */
+  color: red; /* 愛心顏色 */
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* 點擊時放大效果 */
+.favorite-icon.active {
+  transform: scale(1.2); /* 放大 */
+}
+
+
 header {
   display: flex;
   align-items: center;
@@ -35,47 +50,6 @@ header .menu-toggle {
   border: none;
   font-size: 24px;
   cursor: pointer;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  transition: 0.3s;
-  z-index: 2000;
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-.sidebar .close-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 15px 0;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  font-size: 18px;
-  color: #333;
-  display: block;
 }
 
 .categories {
