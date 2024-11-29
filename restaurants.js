@@ -585,7 +585,7 @@ const restaurants = [
         type: "Chinese", 
         image: "sushi.jpg", 
         url: "https://maps.app.goo.gl/ed9N1usuB7PqzoQr6", 
-        orderUrl: "", 
+        orderUrl: "#", 
         phone: "02 2901 2586", 
         address: "新北市新莊區建國一路No. 84號", 
         tags: ["中式"]

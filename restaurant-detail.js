@@ -17,7 +17,11 @@ if (restaurant) {
     <p><strong>地址:</strong> ${restaurant.address}</p>
     <p><strong>連絡電話:</strong> ${restaurant.phone}</p>
     <p><strong>google map連結:</strong> <a href="${restaurant.url}" target="_blank">點這裡</a></p>
-    <p><strong>點餐網址:</strong> <a href="${restaurant.orderUrl}" target="_blank">點餐</a></p>
+    <p><strong>點餐網址:</strong> ${
+      restaurant.orderUrl === '#'
+        ? '無訂餐連結'
+        : `<a href="${restaurant.orderUrl}" target="_blank">點餐</a>`
+    }</p>
     <p><strong>標籤:</strong> ${restaurant.tags.join(", ")}</p>
   `;
 } else {
