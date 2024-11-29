@@ -2,8 +2,8 @@ const restaurants = [
     { 
         name: "小石鍋", 
         type: "Hotpot", //要和Project.html的data-type一致
-        image: "pasta.jpg", 
-        url: "#", 
+        image: "burger.jpg", 
+        url: "https://maps.app.goo.gl/bDAFxE1tV438ByEF8", 
         orderUrl: "https://order-pasta.com",  // 點餐網址
         phone: "02 2908 3333",  // 連絡電話
         address: "新北市新莊區建國一路5號",  // 地址
@@ -13,7 +13,7 @@ const restaurants = [
         name: "12MINI快煮鍋", 
         type: "Hotpot", 
         image: "burger.jpg", 
-        url: "#", 
+        url: "https://maps.app.goo.gl/DWFMjoXTKc4VNKp27", 
         orderUrl: "https://order-burger.com", 
         phone: "02 2902 2612", 
         address: "新北市新莊區建國一路2號", 
@@ -23,7 +23,7 @@ const restaurants = [
         name: "同伙小火鍋", 
         type: "Hotpot", 
         image: "sushi.jpg", 
-        url: "#", 
+        url: "https://maps.app.goo.gl/wAA6xjcme1SkzMpg8", 
         orderUrl: "https://order-sushi.com", 
         phone: "02 2901 7126", 
         address: "新北市新莊區建國一路2-1號", 
@@ -33,8 +33,8 @@ const restaurants = [
         name: "石二鍋", 
         type: "Hotpot", 
         image: "sushi.jpg", 
-        url: "#", 
-        orderUrl: "https://order-sushi.com", 
+        url: "https://maps.app.goo.gl/QyQ4S6WzLZa8dKNe6", 
+        orderUrl: "https://liff.line.me/1645278921-kWRPP32q/?accountId=12hotpot", 
         phone: "02 2908 4166", 
         address: "新北市新莊區建國一路61號", 
         tags: ["火鍋"]
@@ -43,7 +43,7 @@ const restaurants = [
         name: "8鍋新穎時尚臭臭鍋", 
         type: "Hotpot", 
         image: "sushi.jpg", 
-        url: "#", 
+        url: "https://maps.app.goo.gl/GoDEUgy9x3Vb7uva7", 
         orderUrl: "https://order-sushi.com", 
         phone: "02 2903 4863", 
         address: "新北市新莊區建國一路46號", 
@@ -54,7 +54,7 @@ const restaurants = [
         type: "Hotpot", 
         image: "sushi.jpg", 
         url: "#", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "https://maps.app.goo.gl/5i9Uzkgp2dWrZWpB9", 
         phone: "02 2903 0658", 
         address: "新北市新莊區建國一路40號", 
         tags: ["火鍋"]
@@ -63,8 +63,8 @@ const restaurants = [
         name: "想初。享廚 Share Kitchen", 
         type: "Brunch", 
         image: "sushi.jpg", 
-        url: "#", 
-        orderUrl: "https://order-sushi.com", 
+        url: "https://maps.app.goo.gl/dU3vtr6G3LLsQzoH7", 
+        orderUrl: "https://line.me/R/ti/p/%40803uxnec", 
         phone: "02 2904 6666", 
         address: "新北市新莊區中正路514巷91號", 
         tags: ["早午餐"]
@@ -72,8 +72,8 @@ const restaurants = [
     { 
         name: "蛋蛋早餐屋", 
         type: "Brunch", 
-        image: "sushi.jpg", 
-        url: "#", 
+        image: "https://www.google.com/maps/place/%E8%9B%8B%E8%9B%8B%E6%97%A9%E9%A4%90%E5%B1%8B/@25.0341046,121.4314856,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPVvyP8Roi3xqAi9WEguGYA8rMar4JIXWXeDZor!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPVvyP8Roi3xqAi9WEguGYA8rMar4JIXWXeDZor%3Dw114-h86-k-no!7i4032!8i3024!4m7!3m6!1s0x3442a7e8587e9e47:0xd8197904dcf7282c!8m2!3d25.0340317!4d121.4314214!10e5!16s%2Fg%2F1tdz72wz?authuser=0&entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D#", 
+        url: "https://maps.app.goo.gl/rUPgHghpW69YJcDR6", 
         orderUrl: "https://order-sushi.com", 
         phone: "02 2901 8981", 
         address: "新北市新莊區中正路514巷83號", 
@@ -83,8 +83,8 @@ const restaurants = [
         name: "愛玉早餐店", 
         type: "Brunch", 
         image: "sushi.jpg", 
-        url: "#", 
-        orderUrl: "https://order-sushi.com", 
+        url: "https://maps.app.goo.gl/gNV5y67abebbFSLdA", 
+        orderUrl: "https://maps.app.goo.gl/cB3xDrcTb5vwoWX19", 
         phone: "02 2908 5218", 
         address: "新北市新莊區中正路514巷53弄34號", 
         tags: ["早午餐"]
@@ -93,7 +93,7 @@ const restaurants = [
         name: "吉飽早餐", 
         type: "Brunch", 
         image: "sushi.jpg", 
-        url: "#", 
+        url: "https://maps.app.goo.gl/jqpuM7qWLK5RVzBK6", 
         orderUrl: "https://order-sushi.com", 
         phone: "02 2901 7040", 
         address: "新北市新莊區中正路514巷37號", 
@@ -117,6 +117,16 @@ const restaurants = [
         orderUrl: "https://order-sushi.com", 
         phone: "02 2901 2286", 
         address: "新北市新莊區中正路514巷53弄2號2樓", 
+        tags: ["早午餐"]
+    },
+    { 
+        name: "初胖鐵板吐司'", 
+        type: "Brunch", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://liff.line.me/1645278921-kWRPP32q/?accountId=150tcaky", 
+        phone: "0988 690 255", 
+        address: "新北市新莊區中正路514巷63號", 
         tags: ["早午餐"]
     },
     { 
@@ -327,6 +337,26 @@ const restaurants = [
         orderUrl: "https://order-sushi.com", 
         phone: "0912 539 861", 
         address: "新北市新莊區中正路516巷之16號1樓", 
+        tags: ["便當"]
+    },
+    { 
+        name: "芊苡號", 
+        type: "Bento",
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://liff.line.me/1645278921-kWRPP32q/?accountId=493pkdkv", 
+        phone: "0912 539 861", 
+        address: "新北市新莊區中正路516巷之16號1樓", 
+        tags: ["便當"]
+    },
+    { 
+        name: "Mr.布魯", 
+        type: "Bento", 
+        image: "sushi.jpg", 
+        url: "#", 
+        orderUrl: "https://liff.line.me/1645278921-kWRPP32q/?accountId=pbc3695c", 
+        phone: "0922 951 158", 
+        address: "新北市新莊區中正路514巷67號", 
         tags: ["便當"]
     },
     { 
