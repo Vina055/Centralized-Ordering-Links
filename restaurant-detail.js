@@ -31,7 +31,12 @@ if (restaurant) {
           </div>
           <div class="action-buttons">
               <a href="${restaurant.url}" target="_blank" class="google-map-btn">查看 Google 地圖</a>
-              <a href="${restaurant.orderUrl}" target="_blank" class="line-order-btn">Line 線上點餐</a>
+              <a href="${restaurant.orderUrl}" 
+                 class="line-order-btn ${restaurant.orderUrl === "#" ? 'disabled' : ''}" 
+                 ${restaurant.orderUrl === "#" ? 'disabled' : ''}>
+                 Line 線上點餐
+              </a>
+              <button class="add-to-cart-btn">菜單連結</button>
               <button id="favorite-button" class="favorite-heart ${isFavorite ? 'active' : ''}">
                 ❤︎
               </button>
