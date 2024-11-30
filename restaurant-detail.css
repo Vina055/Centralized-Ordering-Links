@@ -20,7 +20,7 @@ header {
     z-index: 1000;
 }
 
-.detail-card {
+.product-container {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #f9f9f9;
@@ -32,7 +32,7 @@ header {
     box-sizing: border-box;
 }
 
-.product-container {
+.product-info {
     display: flex;
     flex-direction: row;
     background-color: #fff;
@@ -142,9 +142,79 @@ header {
     background-color: #333;
 }
 
+/* 顯示更多同類的餐廳 */
+#same-category-container {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    flex-wrap: nowrap; /* 確保水平排列 */
+    overflow-x: scroll; /* 開啟滑動模式 */
+    scroll-snap-type: x mandatory; /* 每個Icon停留在滑動範圍 */
+    /* 隱藏滾軸外觀 */
+    scrollbar-width: none; /* 適用於 Firefox */
+    align-items: center;
+}
+
+/* 餐廳卡片樣式 */
+.relevant-item {
+    flex: 0 0 auto;
+    position: relative;
+    width: 200px;
+    height: 130px; /* 卡片固定高度 */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.relevant-item:hover {
+    transform: scale(1.05); 
+}
+
+/* 背景圖片 */
+.relevant-item .restaurant-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: 0; /* 背景層級最低 */
+}
+
+/* 卡片內文字 */
+.relevant-item .restaurant-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 1; /* 層級高於背景 */
+}
+
+.relevant-item .restaurant-info h3{
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.relevant-item .restaurant-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.relevant-item .restaurant-actions {
+    position: absolute;
+    bottom: 20px; /* 調整位置 */
+    right: 20px;
+    z-index: 2; /* 確保按鈕層級高於所有其他元素 */
+}
+
 /* === 響應式設計 === */
 @media (max-width: 768px) {
-    .product-container {
+    .product-info {
         flex-direction: column; /* 讓內容上下排列 */
         width: 100%; /* 占滿螢幕寬度 */
         gap: 10px;
