@@ -121,7 +121,7 @@ const restaurants = [
         tags: ["早午餐"]
     },
     { 
-        name: "初胖鐵板吐司'", 
+        name: "初胖鐵板吐司", 
         type: "Brunch", 
         image: ('restaurant/初胖.jpg'), 
         url: "https://maps.app.goo.gl/JfXCKdRGJVZ4uBhLA", 
