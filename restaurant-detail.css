@@ -259,7 +259,13 @@ header {
   .favorite-heart:hover {
     transform: scale(1.2); /* 滑鼠移上時稍微放大 */
   }
-  
+
+.line-order-btn.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    pointer-events: none; /* 禁止點擊 */
+}
 
 
   
