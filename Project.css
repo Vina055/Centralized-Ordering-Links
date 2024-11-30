@@ -532,3 +532,31 @@ header .menu-toggle {
   background-color: #cc9900; /* 點擊時的背景色 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 點擊時的陰影縮小 */
 }
+
+/* 愛心按鈕樣式 */
+.favorite-heart {
+  font-size: 24px; /* 調整愛心大小 */
+  color: white; /* 初始顏色為白色 */
+  border: none; /* 移除按鈕邊框 */
+  background: none; /* 移除按鈕背景 */
+  cursor: pointer; /* 游標顯示為手形 */
+  transition: transform 0.3s ease, color 0.3s ease; /* 增加動畫效果 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* 定位至卡片右下角 */
+  bottom: 10px; /* 距離卡片底部 10px */
+  right: 10px; /* 距離卡片右側 10px */
+  z-index: 2; /* 確保層級高於其他內容 */
+}
+
+/* 加入喜歡時的樣式 */
+.favorite-heart.active {
+  color: red; /* 喜歡的狀態顯示紅色 */
+  transform: scale(1.2); /* 放大效果 */
+}
+
+/* 愛心按鈕的 hover 效果 */
+.favorite-heart:hover {
+  transform: scale(1.1); /* 滑鼠移上時稍微放大 */
+}

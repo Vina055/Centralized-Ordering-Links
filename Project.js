@@ -5,6 +5,10 @@ renderRestaurants();
 
 // 頁面載入時渲染所有餐廳
 document.addEventListener('DOMContentLoaded', () => {
+  // 在頁面載入時渲染所有餐廳
+  renderRestaurants();
+
+  // 綁定分類卡片的點擊事件
   document.querySelectorAll('.category-card').forEach(button => {
     button.addEventListener('click', (e) => {
       const type = e.target.closest('.category-card').getAttribute('data-type');
@@ -13,41 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
 // 渲染餐廳
 function renderRestaurants(filter = "all") {
   const container = document.getElementById("menu-container");
   container.innerHTML = ""; // 清空目前顯示的餐廳
   const filtered = filter === "all" ? restaurants : restaurants.filter(r => r.type === filter);
 
-  // 取得目前已儲存的最愛餐廳
-  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-  filtered.forEach((restaurant, index) => {
+  filtered.forEach((restaurant) => {
+    const isFavorite = favorites.some(fav => fav.name === restaurant.name);
+
     const item = document.createElement("div");
     item.className = "menu-item";
-    
-    // 檢查餐廳是否已經在最愛
-    const isFavorite = favorites.some(fav => fav.name === restaurant.name);
-    
     item.innerHTML = `
       <div class="restaurant-card">
-        <!-- 圖片和跳轉功能 -->
         <a href="restaurant-detail.html?name=${encodeURIComponent(restaurant.name)}" class="restaurant-image" 
            style="background-image: url('${restaurant.image}');">
         </a>
-
-        <!-- 餐廳資訊 -->
         <div class="restaurant-info">
           <h3>${restaurant.name}</h3>
           <p>${restaurant.type}</p>
         </div>
-
-        <!-- 按鈕功能 -->
-        <div class="restaurant-actions">
-          <button class="action-button" data-name="${restaurant.name}">
-            ${isFavorite ? '❤️' : '🤍'}
-          </button>
-        </div>
+        <button class="favorite-heart ${isFavorite ? "active" : ""}" data-name="${restaurant.name}">
+          ❤︎
+        </button>
       </div>
     `;
     container.appendChild(item);
@@ -56,38 +51,52 @@ function renderRestaurants(filter = "all") {
 
 // 加入或移除最愛
 function toggleFavorite(restaurantName) {
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 localStorage 載入最愛餐廳
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-  // 查找餐廳
   const restaurant = restaurants.find(r => r.name === restaurantName);
   if (!restaurant) return;
 
-  // 檢查餐廳是否已經在最愛中
   const restaurantIndex = favorites.findIndex(fav => fav.name === restaurantName);
 
   if (restaurantIndex === -1) {
-    // 如果餐廳不在最愛中，加入最愛
     favorites.push(restaurant);
   } else {
-    // 如果餐廳已在最愛中，移除最愛
     favorites.splice(restaurantIndex, 1);
   }
 
-  // 儲存更新後的最愛餐廳
   localStorage.setItem('favorites', JSON.stringify(favorites));
-
-  // 重新渲染餐廳列表
-  renderRestaurants();
+  renderRestaurants(); // 重新渲染，更新愛心狀態
 }
 
-// 事件代理邏輯，處理加入/移除最愛
-document.getElementById('menu-container').addEventListener('click', (event) => {
-  // 確保點擊的目標是按鈕
-  if (event.target.classList.contains('action-button')) {
-    const restaurantName = event.target.getAttribute('data-name');
-    toggleFavorite(restaurantName);
+
+// 點擊切換喜歡狀態
+document.getElementById("menu-container").addEventListener("click", (event) => {
+  if (event.target.classList.contains("favorite-heart")) {
+    const restaurantName = event.target.getAttribute("data-name");
+
+    // 切換 localStorage 中的喜歡狀態
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const restaurantIndex = favorites.findIndex(fav => fav.name === restaurantName);
+
+    if (restaurantIndex === -1) {
+      const restaurant = restaurants.find(r => r.name === restaurantName);
+      favorites.push(restaurant);
+    } else {
+      favorites.splice(restaurantIndex, 1);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    // 更新按鈕樣式
+    event.target.classList.toggle("active");
   }
 });
+
+// 初始化頁面
+document.addEventListener("DOMContentLoaded", () => {
+  renderRestaurants(); // 頁面載入時渲染所有餐廳
+});
+
 
 // 搜尋功能
 document.getElementById('search').addEventListener('input', (event) => {
