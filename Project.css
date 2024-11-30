@@ -7,7 +7,74 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #FFFBD2;
+}
+
+
+.hero {
+  height: 60vh;
+  background-image: url('food/test2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  /* 加入半透明黑色覆蓋層 */
+  background-color: rgba(0, 0, 0, 0.4); /* 黑色，40%透明度 */
+  background-blend-mode: darken;
+}
+
+.hero-text {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero p {
+  font-size: 1.1em;
+  color: white;
+}
+
+/* 手機響應式調整 */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 60vh; /* 減少高度，避免佔用太多畫面 */
+  }
+
+  .hero h1 {
+    font-size: 2em; /* 調整標題大小 */
+  }
+
+  .hero p {
+    font-size: 1.2em; /* 調整副標題大小 */
+  }
+}
+
+/* 更小裝置響應式調整 */
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 30vh;
+    background-size: cover;
+  }
+
+  .hero h1 {
+    font-size: 1.5em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
 }
 
 /* 基礎樣式 */
@@ -38,7 +105,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffcc00;
+  background-color: #FFBB70;
   padding: 10px 20px;
   position: sticky;
   top: 0;
@@ -75,7 +142,7 @@ header .menu-toggle {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  background-color: #fff;
+  background-color: #FFEC9E;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -98,6 +165,8 @@ header .menu-toggle {
   background-color: rgba(255, 255, 255, 0.8); /* 白色半透明背景提升可讀性 */
   border-radius: 5px;
 }
+
+
 
 .category-image {
   width: 100%;
@@ -168,7 +237,6 @@ header .menu-toggle {
 }
 
 /* 外層容器，讓內容居中並設置邊距 */
-
 
 #menu-container, #favorite-container {
 
