@@ -17,11 +17,11 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* 讓背景穩定 */
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
   align-items: center;
   text-align: center;
   /* 加入半透明黑色覆蓋層 */
@@ -50,7 +50,6 @@ body {
 @media screen and (max-width: 768px) {
   .hero {
     height: 60vh; /* 減少高度，避免佔用太多畫面 */
-    background-position: center top; /* 調整圖片位置 */
   }
 
   .hero h1 {
@@ -66,7 +65,7 @@ body {
 @media screen and (max-width: 480px) {
   .hero {
     height: 30vh;
-    padding: 10px; /* 增加內距，避免文字太靠邊 */
+    background-size: cover;
   }
 
   .hero h1 {
