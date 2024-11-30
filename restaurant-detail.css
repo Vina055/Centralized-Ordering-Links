@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.detail-card {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    max-width: 1200px;
+    overflow: hidden;
+    gap: 20px;
+    padding: 2%;
+    align-items: center; /* 水平垂直居中圖片 */
+}
+
+.product-image {
+    flex: 1.5;
+    max-width: 40%;
+    min-width: 300px;
+    min-height: 300px;
+    height: auto; /* 讓圖片容器的高度等於文字容器 */
+    overflow: hidden; /* 隱藏超出範圍的圖片部分 */
+    display: flex;
+    align-items: center; /* 水平垂直居中圖片 */
+    justify-content: center;
+    /* border: 1px solid #000; /* 加上邊框以便觀察 */
+}
+
+.product-image img {
+    height: auto; /* 讓圖片的高度填滿容器 */
+    width: 100%; /* 保持圖片的寬高比例 */
+    object-fit: cover; 
+}
+
+.product-details {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+
+.store-info {
+    margin-top: 20px;
+}
+
+.store-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.food-category,
+.store-phone,
+.store-address {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.google-map-btn,
+.line-order-btn {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.google-map-btn:hover {
+    background-color: #0056b3;
+}
+
+.line-order-btn {
+    background-color: #00c300;
+}
+
+.line-order-btn:hover {
+    background-color: #009f00;
+}
+
+.add-to-cart-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #333;
+}
+
+/* === 響應式設計 === */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column; /* 讓內容上下排列 */
+        width: 100%; /* 占滿螢幕寬度 */
+        gap: 10px;
+    }
+
+    .product-image {
+        width: 100%; /* 讓圖片超出容器的寬度 */
+        max-width: 500px; /* 取消任何限制 */
+        align-self: center; /* 圖片在容器內水平居中 */
+    }
+
+    .product-details {
+        padding: 10%;
+        width: 100%; /* 文字區域正常寬度 */
+        max-width: 90%; /* 防止過度擴展 */
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.favorite-button {
+    font-size: 24px;
+    color: gray;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+.favorite-button .fa-heart {
+    color: red;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.favorite-button.active .fa-heart {
+    display: inline;
+}
+.favorite-button.active .fa-heart-o {
+    display: none;
+}
