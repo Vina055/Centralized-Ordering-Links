@@ -34,20 +34,6 @@ if (restaurant) {
     </div>
   `;
   restaurantInfo.appendChild(card);
-  // restaurantInfo.innerHTML = `
-  //   <h2>${restaurant.name}</h2>
-  //   <img src="${restaurant.image}" alt="${restaurant.name}" />
-  //   <p><strong>分類:</strong> ${restaurant.type}</p>
-  //   <p><strong>地址:</strong> ${restaurant.address}</p>
-  //   <p><strong>連絡電話:</strong> ${restaurant.phone}</p>
-  //   <p><strong>google map連結:</strong> <a href="${restaurant.url}" target="_blank">點這裡</a></p>
-  //   <p><strong>點餐網址:</strong> ${
-  //     restaurant.orderUrl === '#'
-  //       ? '無訂餐連結'
-  //       : `<a href="${restaurant.orderUrl}" target="_blank">點餐</a>`
-  //   }</p>
-  //   <p><strong>標籤:</strong> ${restaurant.tags.join(", ")}</p>
-  // `;
 } else {
   // 如果找不到餐廳資料，顯示錯誤訊息
   const restaurantInfo = document.getElementById('restaurant-info');
