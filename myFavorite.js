@@ -1,4 +1,4 @@
-const favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // 從 localStorage 載入最愛餐廳
+const favorites = JSON.parse(localStorage.getItem('favorites')) || []; // 從 localStorage 載入最愛餐廳
 
 // 頁面載入時渲染所有餐廳
 document.addEventListener('DOMContentLoaded', () => { 
@@ -33,18 +33,20 @@ function showFavorites() {
 
             <!-- 按鈕功能 -->
             <div class="restaurant-actions">
-                <button class="action-button remove-favorite">🤍</button>
+                <button class="favorite-heart ${isFavorite(restaurant.name) ? 'active' : ''}" data-name="${restaurant.name}">
+                    ❤︎
+                </button>
             </div>
         </div>
         `; 
         favoritesContainer.appendChild(item); 
     });
 
-    // 為所有移除最愛的按鈕綁定事件
-    document.querySelectorAll('.remove-favorite').forEach(button => {
+    // 為所有按鈕綁定事件
+    document.querySelectorAll('.favorite-heart').forEach(button => {
         button.addEventListener('click', (event) => {
-            const restaurantName = event.target.closest('.restaurant-card').querySelector('h3').textContent;
-            removeFromFavorites(restaurantName); // 呼叫移除最愛的函數
+            const restaurantName = event.target.getAttribute('data-name');
+            toggleFavorite(restaurantName, event.target); // 呼叫加入/移除最愛函數
         });
     });
 }
@@ -59,12 +61,26 @@ function clearFavorites() {
     document.getElementById('favorite-container').innerHTML = ""; 
 }
 
-// 移除最愛餐廳
-function removeFromFavorites(restaurantName) {
+// 加入/移除最愛餐廳
+function toggleFavorite(restaurantName, button) {
     const index = favorites.findIndex(r => r.name === restaurantName);
-    if (index !== -1) {
-        favorites.splice(index, 1); // 移除餐廳
-        localStorage.setItem('favorites', JSON.stringify(favorites)); // 更新 localStorage
-        showFavorites(); // 重新顯示最愛餐廳
+
+    if (index === -1) {
+        // 餐廳不在最愛中，加入
+        const restaurant = { name: restaurantName };
+        favorites.push(restaurant);
+        button.classList.add('active');
+    } else {
+        // 餐廳已在最愛中，移除
+        favorites.splice(index, 1);
+        button.classList.remove('active');
     }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites)); // 更新 localStorage
+    showFavorites(); // 重新渲染最愛餐廳
+}
+
+// 判斷是否為最愛
+function isFavorite(name) {
+    return favorites.some(fav => fav.name === name);
 }

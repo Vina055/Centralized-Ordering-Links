@@ -239,28 +239,27 @@ header {
         text-align: center;
     }
 }
-
-.favorite-button {
-    font-size: 24px;
-    color: gray;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-}
-.favorite-button .fa-heart {
-    color: red;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.favorite-button.active .fa-heart {
-    display: inline;
-}
-.favorite-button.active .fa-heart-o {
-    display: none;
-}
+/* 愛心按鈕樣式 */
+.favorite-heart {
+    font-size: 24px; /* 調整愛心大小 */
+    color: grey; /* 初始顏色為灰色 */
+    border: none; /* 移除按鈕邊框 */
+    background: none; /* 移除按鈕背景 */
+    cursor: pointer; /* 游標顯示為手形 */
+    transition: transform 0.3s ease, color 0.3s ease; /* 增加動畫效果 */
+  }
+  
+  /* 加入喜歡時的樣式 */
+  .favorite-heart.active {
+    color: red; /* 喜歡的狀態顯示紅色 */
+    transform: scale(1.1); /* 略微放大效果 */
+  }
+  
+  /* 愛心按鈕的 hover 效果 */
+  .favorite-heart:hover {
+    transform: scale(1.2); /* 滑鼠移上時稍微放大 */
+  }
+  
 
 
   
