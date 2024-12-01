@@ -333,5 +333,31 @@ header {
     pointer-events: none; /* 禁止點擊 */
 }
 
+button {
+    background-color: #ffdd64d7; /* 主要背景顏色 (綠色，可更改為你需要的顏色) */
+    color: white; /* 文字顏色 */
+    font-size: 16px; /* 字體大小 */
+    font-weight: bold; /* 加粗字體 */
+    padding: 5px 15px; /* 內邊距 */
+    border: none; /* 移除邊框 */
+    border-radius: 5px; /* 圓角邊框 */
+    cursor: pointer; /* 滑鼠指針 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 添加按鈕陰影 */
+    transition: all 0.3s ease; /* 平滑過渡效果 */
+  }
+  
+  /* 懸停效果 */
+  button:hover {
+    background-color: #e6bf54; /* 懸停時的背景色 */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* 增加陰影效果 */
+  }
+  
+  /* 按下效果 */
+  button:active {
+    background-color: #fadc70; /* 按下時背景色 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 減少陰影效果 */
+    transform: scale(0.98); /* 按下時微縮效果 */
+  }
+
 
   
