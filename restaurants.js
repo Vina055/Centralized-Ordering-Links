@@ -47,7 +47,7 @@ const restaurants = [
         name: "8鍋新穎時尚臭臭鍋", 
         type: "Hotpot", 
         image: ('restaurant/8鍋.jpg'), 
-        menu:["menu/8鍋8鍋新穎時尚臭臭鍋.jpg"],
+        menu:["menu/8鍋新穎時尚臭臭鍋.jpg"],
         url: "https://maps.app.goo.gl/GoDEUgy9x3Vb7uva7", 
         orderUrl: "#", 
         phone: "02 2903 4863", 
@@ -330,7 +330,7 @@ const restaurants = [
         image: ('restaurant/方禾食呂.jpg'), 
         menu:["menu/方禾食呂.jpg"],
         url: "https://maps.app.goo.gl/DmGUM9qu1nfv6rTg9", 
-        orderUrl: "https://order-sushi.com", 
+        orderUrl: "#", 
         phone: "02 2908 1397", 
         address: "新北市新莊區中正路514巷53弄39號", 
         tags: ["便當"]
