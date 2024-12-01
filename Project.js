@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+window.addEventListener('popstate', function (event) { 
+  // 使用者點擊返回按鈕時觸發 
+  console.log('歷史紀錄變更:', event.state); 
+  // 這裡寫你的處理函式
+  renderRestaurants();
+});
 
 // 渲染餐廳
 function renderRestaurants(filter = "all") {
