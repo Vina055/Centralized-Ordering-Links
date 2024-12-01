@@ -3,12 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     showFavorites(); 
 });
 
-window.addEventListener('popstate', function (event) { 
-    // 使用者點擊返回按鈕時觸發 
-    console.log('歷史紀錄變更:', event.state); 
-    // 這裡寫你的處理函式
-    showFavorites(); 
-});
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+      console.log("使用者透過返回鍵回到此頁面");
+      showFavorites();
+    } else {
+      console.log("頁面正常載入");
+    }
+  });
+  
 
 // 顯示最愛餐廳
 function showFavorites() {
