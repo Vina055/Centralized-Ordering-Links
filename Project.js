@@ -40,9 +40,9 @@ function renderRestaurants(filter = "all") {
           <h3>${restaurant.name}</h3>
           <p>${restaurant.type}</p>
         </div>
-      <a href="#" class="heart ${isFavorite ? "active" : ""}" data-name="${restaurant.name}">
-        <i class="fas fa-heart"></i>
-      </a>
+        <a href="#" class="heart ${isFavorite ? "active" : ""}" data-name="${restaurant.name}">
+          <i class="fas fa-heart"></i>
+        </a>
 
       </div>
     `;

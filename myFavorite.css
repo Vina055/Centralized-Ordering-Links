@@ -1,121 +1,143 @@
 /* 收藏頁面容器 */
 #favorite-container {
-    display: grid;
-    gap: 20px; /* 卡片間距 */
-    justify-content: center; /* 水平居中 */
-    margin: 20px auto; /* 上下邊距 */
-    padding: 20px; /* 外部邊距 */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 響應式列數 */
-  }
+  display: grid;
+  gap: 20px; /* 卡片間的間距 */
+  justify-content: center; /* 水平居中 */
+  margin: 0 auto; /* 讓容器居中 */
+  padding: 20px; /* 外部邊距 */
+  max-width: 1200px; /* 限制容器的最大寬度 */
   
-  /* 收藏卡片樣式 */
-  .favorite-item {
-    position: relative;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 響應式列數 */
+}
   
-  .favorite-item:hover {
-    transform: scale(1.05);
-  }
+/* 餐廳卡片樣式 */
+.favorite-item {
+  position: relative;
+  width: 100%; /* 卡片寬度依容器分配 */
+  height: 200px; /* 卡片固定高度 */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
   
-  /* 收藏卡片內部圖片 */
-  .favorite-item .restaurant-image {
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.8);
-    transition: filter 0.3s ease;
-  }
+.favorite-item:hover {
+  transform: scale(1.05);
+}
   
-  .favorite-item:hover .restaurant-image {
-    filter: brightness(1);
-  }
+/* 背景圖片 */
+.favorite-item .restaurant-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+  z-index: 0; /* 背景層級最低 */
+}
+
+/* 卡片內文字 */
+.favorite-item .restaurant-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 1; /* 層級高於背景 */
+}
   
-  /* 收藏卡片文字內容 */
-  .favorite-item .restaurant-info {
-    padding: 15px;
-    color: #333;
-  }
+.favorite-item .restaurant-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
   
-  .favorite-item .restaurant-info h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
+.favorite-item .restaurant-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
   
-  .favorite-item .restaurant-info p {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0;
-  }
+/* 移除最愛按鈕 - 愛心按鈕 
+.favorite-item .restaurant-actions {
+  position: absolute;
+  bottom: 20px; /* 調整位置 
+  right: 20px;
+  z-index: 2; /* 確保按鈕層級高於所有其他元素
+}
+*/
+
+/* 我的最愛按鈕樣式 */
+.heart {
+  font-size: 24px; /* 調整愛心大小 */
+  color: white; /* 初始顏色為白色 */
+  background: none; /* 移除按鈕背景 */
+  cursor: pointer; /* 游標顯示為手形 */
+  transition: transform 0.3s ease, color 0.3s ease; /* 增加動畫效果 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* 定位至卡片右下角 */
+  bottom: 15px; /* 距離卡片底部 15px */
+  right: 15px; /* 距離卡片右側 15px */
+  z-index: 2; /* 確保層級高於其他內容 */
+  text-decoration: none;
+}
+
+.heart i {
+  font-size: 24px; /* 設定愛心的大小 */
+  color: #e6e6e6; /* 初始顏色 */
+}
+
+/* 點擊後的狀態 */
+.heart.active i {
+  color: rgb(255, 71, 71); /* 切換為紅色 */
+  transform: scale(1.2); /* 放大效果 */
+}
+
+/* 滑鼠移上效果 */
+.heart:hover i {
+  transform: scale(1.1);
+}
   
-  /* 移除最愛按鈕 - 愛心按鈕 */
-  .favorite-item .restaurant-actions {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-  }
+/* 當收藏清單為空時顯示提示 
+#favorite-container p {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+  margin-top: 50px;
+}
+*/
   
-  .favorite-item .restaurant-actions .favorite-heart {
-    font-size: 24px; /* 調整愛心大小 */
-    color: grey; /* 初始顏色為灰色 */
-    border: none; /* 移除按鈕邊框 */
-    background: none; /* 移除按鈕背景 */
-    cursor: pointer; /* 游標顯示為手形 */
-    transition: transform 0.3s ease, color 0.3s ease; /* 增加動畫效果 */
-  }
+/* 我的最愛標題 */
+#myfavor-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+}
   
-  .favorite-item .restaurant-actions .favorite-heart.active {
-    color: red; /* 喜歡的狀態顯示紅色 */
-    transform: scale(1.1); /* 略微放大效果 */
-  }
+/* 清空我的最愛按鈕 */
+#clear-favorites-button {
+  display: block;
+  margin: 20px auto;
+  background-color: #ff6666;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
   
-  .favorite-item .restaurant-actions .favorite-heart:hover {
-    transform: scale(1.2); /* 滑鼠移上時稍微放大 */
-  }
-  
-  /* 當收藏清單為空時顯示提示 */
-  #favorite-container p {
-    text-align: center;
-    font-size: 18px;
-    color: #999;
-    margin-top: 50px;
-  }
-  
-  /* 我的最愛標題 */
-  #myfavor-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin: 20px 0;
-  }
-  
-  /* 清空我的最愛按鈕 */
-  #clear-favorites-button {
-    display: block;
-    margin: 20px auto;
-    background-color: #ff6666;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  #clear-favorites-button:hover {
-    background-color: #cc0000;
-    transform: scale(1.05);
-  }
-  
-  #clear-favorites-button:active {
-    transform: scale(0.95);
-  }
+#clear-favorites-button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+#clear-favorites-button:active {
+  transform: scale(0.95);
+}
