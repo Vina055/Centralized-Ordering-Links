@@ -286,6 +286,10 @@ header .menu-toggle {
 }
 
 /* 我的最愛按鈕樣式 */
+a {
+  outline: none;
+}
+
 .heart {
   font-size: 24px; /* 調整愛心大小 */
   color: white; /* 初始顏色為白色 */
