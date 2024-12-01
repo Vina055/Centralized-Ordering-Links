@@ -242,23 +242,41 @@ header {
     }
 }
 
+/* 菜單圖片容器（橫向排列） */
+.menu-container {
+    display: flex; /* 使用 flexbox 進行水平排列 */
+    flex-direction: row; /* 設定為橫向排列 */
+    gap: 20px; /* 圖片之間的間距 */
+    padding: 10px 0; /* 上下間距 */
+    overflow-x: auto; /* 開啟橫向滾動 */
+    scrollbar-width: thin; /* 顯示滾動條（適用於 Firefox） */
+}
+
+.menu-container::-webkit-scrollbar {
+    height: 8px; /* 滾動條的高度 */
+}
+
+.menu-container::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* 滾動條顏色 */
+    border-radius: 4px; /* 圓角效果 */
+}
+
 /* 菜單圖片容器 */
 .menu-image-wrapper {
-    width: 150px; /* 固定寬度為150px，可以根據需要調整 */
-    height: 150px; /* 固定高度為150px，使其成為正方形 */
-    overflow: hidden; /* 確保超出的部分不顯示 */
-    margin: 10px; /* 添加一些間距 */
-    position: relative;
-    border-radius: 15px; /* 圓角邊緣 */
+    flex: 0 0 auto; /* 固定圖片寬度，避免收縮 */
+    border-radius: 15px; /* 圓角效果 */
+    overflow: hidden; /* 圖片超出部分隱藏 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+    cursor: pointer; /* 滑鼠顯示手形 */
 }
 
 /* 菜單圖片 */
-.menu-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持圖片比例且填滿容器 */
+.menu-image-wrapper img {
+    width: 150px; /* 固定圖片寬度，確保圖片大小一致 */
+    height: 150px; /* 固定圖片高度，形成正方形圖片 */
+    object-fit: cover; /* 確保圖片填滿容器，同時保持比例 */
     object-position: center; /* 確保圖片保持居中顯示 */
-    transition: transform 0.3s ease-in-out; /* 增加放大效果的動畫 */
+    transition: transform 0.3s ease; /* 增加放大效果的動畫 */
 }
 
 .menu-image-wrapper:hover .menu-image {
@@ -306,6 +324,29 @@ header {
     background: transparent;
     border: none;
 }
+
+/* 展開/收回菜單的按鈕 */
+#menu-button,
+#close-menu-button {
+    background-color: #007bff; /* 基本按鈕背景顏色 */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#menu-button:hover,
+#close-menu-button:hover {
+    background-color: #0056b3; /* 懸停時的按鈕顏色 */
+    transform: scale(1.05); /* 懸停時稍微放大按鈕 */
+}
+
+
+
 
 /* 我的最愛按鈕樣式 */
 .heart {
