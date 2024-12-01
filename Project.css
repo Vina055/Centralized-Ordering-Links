@@ -286,10 +286,9 @@ header .menu-toggle {
 }
 
 /* 我的最愛按鈕樣式 */
-.favorite-heart {
+.heart {
   font-size: 24px; /* 調整愛心大小 */
   color: white; /* 初始顏色為白色 */
-  border: none; /* 移除按鈕邊框 */
   background: none; /* 移除按鈕背景 */
   cursor: pointer; /* 游標顯示為手形 */
   transition: transform 0.3s ease, color 0.3s ease; /* 增加動畫效果 */
@@ -297,21 +296,28 @@ header .menu-toggle {
   align-items: center;
   justify-content: center;
   position: absolute; /* 定位至卡片右下角 */
-  bottom: 10px; /* 距離卡片底部 10px */
-  right: 10px; /* 距離卡片右側 10px */
+  bottom: 15px; /* 距離卡片底部 15px */
+  right: 15px; /* 距離卡片右側 15px */
   z-index: 2; /* 確保層級高於其他內容 */
+  text-decoration: none;
 }
 
-/* 加入喜歡時的樣式 */
-.favorite-heart.active {
-  color: red; /* 喜歡的狀態顯示紅色 */
+.heart i {
+  font-size: 24px; /* 設定愛心的大小 */
+  color: #e6e6e6; /* 初始顏色 */
+}
+
+/* 點擊後的狀態 */
+.heart.active i {
+  color: rgb(255, 71, 71); /* 切換為紅色 */
   transform: scale(1.2); /* 放大效果 */
 }
 
-/* 愛心按鈕的 hover 效果 */
-.favorite-heart:hover {
-  transform: scale(1.1); /* 滑鼠移上時稍微放大 */
+/* 滑鼠移上效果 */
+.heart:hover i {
+  transform: scale(1.1);
 }
+
 
 /*網格布局*/
 /* 外層容器，讓內容居中並設置邊距 */

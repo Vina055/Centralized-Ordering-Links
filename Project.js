@@ -40,39 +40,27 @@ function renderRestaurants(filter = "all") {
           <h3>${restaurant.name}</h3>
           <p>${restaurant.type}</p>
         </div>
-        <button class="favorite-heart ${isFavorite ? "active" : ""}" data-name="${restaurant.name}">
-          ❤︎
-        </button>
+      <a href="#" class="heart ${isFavorite ? "active" : ""}" data-name="${restaurant.name}">
+        <i class="fas fa-heart"></i>
+      </a>
+
       </div>
     `;
     container.appendChild(item);
   });
 }
 
-// 加入或移除最愛
-function toggleFavorite(restaurantName) {
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-  const restaurant = restaurants.find(r => r.name === restaurantName);
-  if (!restaurant) return;
-
-  const restaurantIndex = favorites.findIndex(fav => fav.name === restaurantName);
-
-  if (restaurantIndex === -1) {
-    favorites.push(restaurant);
-  } else {
-    favorites.splice(restaurantIndex, 1);
-  }
-
-  localStorage.setItem('favorites', JSON.stringify(favorites));
-  renderRestaurants(); // 重新渲染，更新愛心狀態
-}
-
 
 // 點擊切換喜歡狀態
 document.getElementById("menu-container").addEventListener("click", (event) => {
-  if (event.target.classList.contains("favorite-heart")) {
-    const restaurantName = event.target.getAttribute("data-name");
+  const target = event.target;
+
+  // 確保只處理心形按鈕的點擊
+  if (target.classList.contains("fa-heart") || target.classList.contains("heart")) {
+    event.preventDefault(); // 阻止 `<a>` 的預設跳轉行為
+
+    const heart = target.closest(".heart"); // 確定是點擊 `.heart` 或內部的 `.fa-heart`
+    const restaurantName = heart.getAttribute("data-name");
 
     // 切換 localStorage 中的喜歡狀態
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -88,9 +76,10 @@ document.getElementById("menu-container").addEventListener("click", (event) => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
 
     // 更新按鈕樣式
-    event.target.classList.toggle("active");
+    heart.classList.toggle("active");
   }
 });
+
 
 // 初始化頁面
 document.addEventListener("DOMContentLoaded", () => {
