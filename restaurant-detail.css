@@ -325,28 +325,6 @@ header {
     border: none;
 }
 
-/* 展開/收回菜單的按鈕 */
-#menu-button,
-#close-menu-button {
-    background-color: #007bff; /* 基本按鈕背景顏色 */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#menu-button:hover,
-#close-menu-button:hover {
-    background-color: #0056b3; /* 懸停時的按鈕顏色 */
-    transform: scale(1.05); /* 懸停時稍微放大按鈕 */
-}
-
-
-
 
 /* 我的最愛按鈕樣式 */
 .heart {
