@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #FFFBD2;
-  }
+}
 
 header {
     display: flex;
@@ -18,10 +18,10 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-  }
+}
 
 
-
+/* ??? */
 .product-container {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -323,6 +323,7 @@ header {
     border: none;
 }
 
+<<<<<<< HEAD
 /* 展開/收回菜單的按鈕 */
 #menu-button,
 #close-menu-button {
@@ -346,24 +347,46 @@ header {
 
 /* 愛心按鈕樣式 */
 .favorite-heart {
+=======
+/* 我的最愛按鈕樣式 */
+.heart {
+>>>>>>> a4cffb45799ab73a0c81ff41906341f69b24a990
     font-size: 24px; /* 調整愛心大小 */
-    color: grey; /* 初始顏色為灰色 */
-    border: none; /* 移除按鈕邊框 */
-    background: none; /* 移除按鈕背景 */
+    color: rgb(255, 255, 255);  /* 初始顏色 */ 
+    /* background: none; /* 移除按鈕背景 */
     cursor: pointer; /* 游標顯示為手形 */
     transition: transform 0.3s ease, color 0.3s ease; /* 增加動畫效果 */
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* 確保層級高於其他內容 */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
   
-  /* 加入喜歡時的樣式 */
-  .favorite-heart.active {
-    color: red; /* 喜歡的狀態顯示紅色 */
-    transform: scale(1.1); /* 略微放大效果 */
-  }
+.heart i {
+    font-size: 24px; /* 設定愛心的大小 */
+    color: #ffffff; /* 初始顏色 */
+    
+}
+
+
+.heart p {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+} 
+
   
-  /* 愛心按鈕的 hover 效果 */
-  .favorite-heart:hover {
-    transform: scale(1.2); /* 滑鼠移上時稍微放大 */
-  }
+/* 點擊後的狀態 */
+.heart.active i {
+    color: rgb(255, 71, 71); /* 切換為紅色 */
+}
+  
+/* 滑鼠移上效果 */
+.heart:hover i {
+    transform: scale(1.1);
+}
 
 .line-order-btn.disabled {
     background-color: #ccc;
@@ -383,6 +406,7 @@ button {
     cursor: pointer; /* 滑鼠指針 */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 添加按鈕陰影 */
     transition: all 0.3s ease; /* 平滑過渡效果 */
+    gap: 10px;
   }
   
   /* 懸停效果 */
