@@ -20,8 +20,6 @@ header {
     z-index: 1000;
 }
 
-
-/* ??? */
 .product-container {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -145,6 +143,10 @@ header {
 }
 
 /* 顯示更多同類的餐廳 */
+.text-and-container {
+    padding-left: 5%;
+}
+
 #same-category-container {
     display: flex;
     gap: 20px;
