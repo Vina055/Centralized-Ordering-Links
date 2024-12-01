@@ -323,7 +323,6 @@ header {
     border: none;
 }
 
-<<<<<<< HEAD
 /* 展開/收回菜單的按鈕 */
 #menu-button,
 #close-menu-button {
@@ -345,12 +344,10 @@ header {
 }
 
 
-/* 愛心按鈕樣式 */
-.favorite-heart {
-=======
+
+
 /* 我的最愛按鈕樣式 */
 .heart {
->>>>>>> a4cffb45799ab73a0c81ff41906341f69b24a990
     font-size: 24px; /* 調整愛心大小 */
     color: rgb(255, 255, 255);  /* 初始顏色 */ 
     /* background: none; /* 移除按鈕背景 */
