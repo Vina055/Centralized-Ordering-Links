@@ -38,11 +38,12 @@ if (restaurant) {
                        Line 線上點餐
                     </a>
                     <button id="menu-button" class="add-to-cart-btn">開啟菜單</button>
+                    <button id="favorite-button" class="heart ${isFavorite ? 'active' : ''}" data-name="${restaurant.name}">
+                        <i class="fas fa-heart"></i>
+                        <p>${isFavorite ? '已加入最愛' : '加入最愛'}</p>
+                    </button>
                     <!-- 菜單顯示區域 -->
                     <div id="menu-container" class="menu-container"></div> 
-                    <button id="favorite-button" class="favorite-heart ${isFavorite ? 'active' : ''}">
-                        ❤︎
-                    </button>
                 </div>
             </div>
         </div>
@@ -119,12 +120,6 @@ if (restaurant) {
         });
     }
 
-    // 綁定加入/取消最愛按鈕的事件
-    const favoriteButton = document.getElementById('favorite-button');
-    favoriteButton.addEventListener('click', () => {
-        toggleFavorite(restaurant.name, favoriteButton);
-    });
-
     // 顯示同類餐廳
     const sameCategory = restaurants.filter(r => r.type === restaurant.type && r.name !== restaurantName);
     if (sameCategory.length > 0) {
@@ -149,11 +144,6 @@ if (restaurant) {
                         <h3>${shop.name}</h3>
                         <p>${shop.type}</p>
                     </div>
-                    <div class="restaurant-actions">
-                        <button class="favorite-heart ${isShopFavorite ? 'active' : ''}" data-name="${shop.name}">
-                            ❤︎
-                        </button>
-                    </div>
                 </div>
             `;
             moreRestaurant.appendChild(item);
@@ -171,22 +161,30 @@ if (restaurant) {
     document.getElementById('detail-container').innerHTML = `<p>找不到該餐廳資料。</p>`;
 }
 
-// 加入/移除最愛功能
-function toggleFavorite(name, button) {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const restaurant = restaurants.find(r => r.name === name);
 
-    if (!restaurant) return;
+// 點擊切換喜歡狀態
+document.getElementById("favorite-button").addEventListener("click", (event) => {
+    const target = event.target;
 
-    const index = favorites.findIndex(fav => fav.name === name);
+    const heart = target.closest(".heart"); // 確定是點擊 `.heart` 或內部的 `.fa-heart`
+    const restaurantName = heart.getAttribute("data-name");
 
-    if (index === -1) {
-        favorites.push(restaurant); // 加入最愛
-        button.classList.add('active'); // 改變樣式
+    // 切換 localStorage 中的喜歡狀態
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const restaurantIndex = favorites.findIndex(fav => fav.name === restaurantName);
+
+    const favotext = document.getElementsByClassName("favo-text");
+    if (restaurantIndex === -1) {
+    const restaurant = restaurants.find(r => r.name === restaurantName);
+    favorites.push(restaurant);
+    heart.innerHTML = '<i class="fas fa-heart"></i><p>已加入最愛</p>'; // 更新按鈕文字
     } else {
-        favorites.splice(index, 1); // 移除最愛
-        button.classList.remove('active'); // 改變樣式
+    favorites.splice(restaurantIndex, 1);
+    heart.innerHTML = '<i class="fas fa-heart"></i><p>加入最愛</p>';
     }
 
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-}
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    // 更新按鈕樣式
+    heart.classList.toggle("active");
+});

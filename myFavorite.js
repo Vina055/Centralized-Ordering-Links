@@ -20,23 +20,23 @@ function showFavorites() {
         item.className = "favorite-item"; 
         item.innerHTML = ` 
         <div class="restaurant-card">
-        <!-- 圖片和跳轉功能 -->
-        <a href="restaurant-detail.html?name=${encodeURIComponent(restaurant.name)}" class="restaurant-image" 
-        style="background-image: url('${restaurant.image}');">
-        </a>
-        
-        <!-- 餐廳資訊 -->
-        <div class="restaurant-info">
-        <h3>${restaurant.name}</h3>
-        <p>${restaurant.type}</p>
-        </div>
-        
-        <!-- 按鈕功能 -->
-        <div class="restaurant-actions">
-        <a href="#" class="heart ${isFavorite ? "active" : ""}" data-name="${restaurant.name}">
-        <i class="fas fa-heart"></i>
-        </a>
-        </div>
+            <!-- 圖片和跳轉功能 -->
+            <a href="restaurant-detail.html?name=${encodeURIComponent(restaurant.name)}" class="restaurant-image" 
+            style="background-image: url('${restaurant.image}');">
+            </a>
+            
+            <!-- 餐廳資訊 -->
+            <div class="restaurant-info">
+                <h3>${restaurant.name}</h3>
+                <p>${restaurant.type}</p>
+            </div>
+            
+            <!-- 按鈕功能 -->
+            <div class="restaurant-actions">
+                <a href="#" class="heart ${isFavorite ? "active" : ""}" data-name="${restaurant.name}">
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
         </div>
         `; 
         favoritesContainer.appendChild(item); 
