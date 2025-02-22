@@ -25,7 +25,7 @@ if (restaurant) {
             <div class="product-details">
                 <h1 class="product-title">${restaurant.name}</h1>
                 <div class="store-info">
-                    <p class="food-category">食物類別：${restaurant.type}</p>
+                    <p class="food-category">食物類別：${restaurant.tags}</p>
                     <p class="store-phone">聯絡電話：${restaurant.phone}</p>
                     <p class="store-address">地址：${restaurant.address}</p>
                 </div>              
@@ -127,7 +127,7 @@ if (restaurant) {
         const moreRestaurant = document.getElementById('same-category-container');
 
         const text = document.createElement('div');
-        text.innerHTML = `<h1 class="product-title">更多有關 ${restaurant.type} 的餐廳</h1>`;
+        text.innerHTML = `<h1 class="product-title">更多有關 ${restaurant.tags} 的餐廳</h1>`;
         textInfo.appendChild(text);
 
         sameCategory.forEach(shop => {

@@ -47,7 +47,7 @@ function renderRestaurants(filter = "all") {
         </a>
         <div class="restaurant-info">
           <h3>${restaurant.name}</h3>
-          <p>${restaurant.type}</p>
+          <p>${restaurant.tags}</p>
         </div>
         <a href="#" class="heart ${isFavorite ? "active" : ""}" data-name="${restaurant.name}">
           <i class="fas fa-heart"></i>

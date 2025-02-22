@@ -1,5 +1,60 @@
 const restaurants = [
     { 
+        name: "阿珠媽", 
+        type: "li-yuan", //要和Project.html的data-type一致
+        image: ('restaurant/阿珠媽.jpg'), //餐廳圖片
+        menu:["menu/小石鍋.jpg"],
+        url: "https://maps.app.goo.gl/S1rKSZ7aSpBLKLSVA", 
+        orderUrl: "https://line.me/ti/g/H0QXpEGZe4",  // 點餐網址
+        phone: "None",  // 連絡電話
+        address: "新北市新莊區中正路510號",  // 地址
+        tags: ["理園"]  // 標籤
+    },
+    { 
+        name: "娃子", 
+        type: "li-yuan", 
+        image: ('restaurant/娃子.jpg'), 
+        menu:["menu/12MINI快煮鍋.jpg"],
+        url: "https://maps.app.goo.gl/S1rKSZ7aSpBLKLSVA", 
+        orderUrl: "https://lin.ee/mwQTWuO", 
+        phone: "None", 
+        address: "新北市新莊區中正路510號", 
+        tags: ["理園"]
+    },
+    { 
+        name: "熊賀炒飯", 
+        type: "li-yuan", 
+        image: ('restaurant/熊賀炒飯.jpg'), 
+        menu:["menu/12MINI快煮鍋.jpg"],
+        url: "https://maps.app.goo.gl/S1rKSZ7aSpBLKLSVA", 
+        orderUrl: "#", 
+        phone: "None", 
+        address: "新北市新莊區中正路510號", 
+        tags: ["理園"]
+    },
+    { 
+        name: "豪客來", 
+        type: "li-yuan", 
+        image: ('restaurant/豪客來.jpg'), 
+        menu:["menu/12MINI快煮鍋.jpg"],
+        url: "https://maps.app.goo.gl/S1rKSZ7aSpBLKLSVA", 
+        orderUrl: "#", 
+        phone: "None", 
+        address: "新北市新莊區中正路510號", 
+        tags: ["理園"]
+    },
+    { 
+        name: "7-11?", 
+        type: "li-yuan", 
+        image: ('restaurant/7-11.jpg'), 
+        menu:["menu/12MINI快煮鍋.jpg"],
+        url: "https://maps.app.goo.gl/S1rKSZ7aSpBLKLSVA", 
+        orderUrl: "#", 
+        phone: "None", 
+        address: "新北市新莊區中正路510號", 
+        tags: ["理園"]
+    },
+    { 
         name: "小石鍋", 
         type: "Hotpot", //要和Project.html的data-type一致
         image: ('restaurant/小石鍋.jpg'), //餐廳圖片
